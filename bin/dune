@@ -1,0 +1,3 @@
+(executable
+ (libraries SQLDB ANSITerminal)
+ (name main))
