@@ -1,0 +1,18 @@
+(** @canonical SQLDB.Command *)
+module Command = SQLDB__Command
+
+
+(** @canonical SQLDB.Db *)
+module Db = SQLDB__Db
+
+
+(** @canonical SQLDB.Dbtype *)
+module Dbtype = SQLDB__Dbtype
+
+
+(** @canonical SQLDB.Destringify *)
+module Destringify = SQLDB__Destringify
+
+
+(** @canonical SQLDB.Stringify *)
+module Stringify = SQLDB__Stringify

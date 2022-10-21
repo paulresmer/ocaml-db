@@ -1,0 +1,84 @@
+(lang dune 3.4)
+(name SQLDB)
+(sections (lib .) (libexec .) (doc ../../doc/SQLDB))
+(files
+ (lib
+  (META
+   SQLDB.a
+   SQLDB.cma
+   SQLDB.cmxa
+   command.ml
+   command.mli
+   db.ml
+   db.mli
+   dbtype.ml
+   dbtype.mli
+   destringify.ml
+   destringify.mli
+   dune-package
+   opam
+   sQLDB.cmi
+   sQLDB.cmt
+   sQLDB.cmx
+   sQLDB.ml
+   sQLDB__Command.cmi
+   sQLDB__Command.cmt
+   sQLDB__Command.cmti
+   sQLDB__Command.cmx
+   sQLDB__Db.cmi
+   sQLDB__Db.cmt
+   sQLDB__Db.cmti
+   sQLDB__Db.cmx
+   sQLDB__Dbtype.cmi
+   sQLDB__Dbtype.cmt
+   sQLDB__Dbtype.cmti
+   sQLDB__Dbtype.cmx
+   sQLDB__Destringify.cmi
+   sQLDB__Destringify.cmt
+   sQLDB__Destringify.cmti
+   sQLDB__Destringify.cmx
+   sQLDB__Stringify.cmi
+   sQLDB__Stringify.cmt
+   sQLDB__Stringify.cmti
+   sQLDB__Stringify.cmx
+   stringify.ml
+   stringify.mli))
+ (libexec (SQLDB.cmxs))
+ (doc (README.md)))
+(library
+ (name SQLDB)
+ (kind normal)
+ (archives (byte SQLDB.cma) (native SQLDB.cmxa))
+ (plugins (byte SQLDB.cma) (native SQLDB.cmxs))
+ (native_archives SQLDB.a)
+ (requires yojson)
+ (main_module_name SQLDB)
+ (modes byte native)
+ (modules
+  (wrapped
+   (main_module_name SQLDB)
+   (modules
+    ((name Command)
+     (obj_name sQLDB__Command)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Db) (obj_name sQLDB__Db) (visibility public) (impl) (intf))
+    ((name Dbtype) (obj_name sQLDB__Dbtype) (visibility public) (impl) (intf))
+    ((name Destringify)
+     (obj_name sQLDB__Destringify)
+     (visibility public)
+     (impl)
+     (intf))
+    ((name Stringify)
+     (obj_name sQLDB__Stringify)
+     (visibility public)
+     (impl)
+     (intf)))
+   (alias_module
+    (name SQLDB)
+    (obj_name sQLDB)
+    (visibility public)
+    (kind alias)
+    (impl))
+   (wrapped true))))
