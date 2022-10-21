@@ -32,7 +32,8 @@ let rec main_repl () =
                COUNT t: Display number of rows in table t."
               [ ANSITerminal.cyan ] main_repl ()
         | TableInit t ->
-            let _ = init_table t !current_database in
+            let newdb = init_table t !current_database in
+            let _ = current_database := newdb in
             print_function ("\nCreated table " ^ t) [ ANSITerminal.cyan ]
               main_repl ()
         | DescribeCols t ->

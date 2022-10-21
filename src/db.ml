@@ -30,7 +30,7 @@ let init_table (name : string) (db : db) =
   else
     let newdb = new_table :: db in
     save newdb "db.json";
-    new_table
+    newdb
 
 let cols_of_table (name : string) (db : db) =
   if not (List.mem name (List.map (fun table -> table.title) db)) then

@@ -17,7 +17,7 @@ val col_name : column -> string
 (** Gets column name*)
 
 (*Creates a new, empty table, returns the table*)
-val init_table : string -> db -> table
+val init_table : string -> db -> db
 
 (*List of columns in table*)
 val cols_of_table : string -> db -> column list
