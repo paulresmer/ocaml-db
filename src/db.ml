@@ -15,8 +15,21 @@ let add_to_col (value : value) (column : column) =
   in
   { column with values = new_vals }
 
-let rem_from_col (value : value) (column : column) =
-  { column with values = List.filter (fun elt -> elt <> value) column.values }
+let add_to_tbl (column : column) (table : table) =
+  { table with cols = column :: table.cols }
+
+let rec insert_helper (values : value list) (columns : column list)
+    (table : table) =
+  match (values, columns) with
+  | [], [] -> table
+  | v_head :: v_tail, c_head :: c_tail ->
+      let new_col = add_to_col v_head c_head in
+      insert_helper v_tail c_tail (add_to_tbl new_col table)
+  | [], _ -> raise InvalidAdd
+  | _, [] -> raise InvalidAdd
+
+let insert_row (row : value list) (table : table) =
+  insert_helper row table.cols table
 
 let get_col (name : string) (tbl : table) =
   List.find (fun col -> col.name = name) tbl.cols

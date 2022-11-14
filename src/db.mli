@@ -3,14 +3,9 @@ open Dbtype
 exception InvalidAdd
 exception InvalidTableName
 
-(*[add_to_col v c] is the column [c] with the value [v] added to it.*)
-val add_to_col : value -> column -> column
-
-(*[rem_from_col v c] is the column [c] with the value [v] removed from it.*)
-val rem_from_col : value -> column -> column
-
-(*[rename_col s c] is a copy of the column [c] with its name changed to [s].*)
-val rename_col : string -> column -> column
+(*[insert_row v_l t] is the table [t] with a new row of values [v_l] appended to
+  it.*)
+val insert_row : value list -> table -> table
 
 (*[col_name c] is the name of the column c*)
 val col_name : column -> string
