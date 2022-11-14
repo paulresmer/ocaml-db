@@ -3,33 +3,34 @@ open Dbtype
 exception InvalidAdd
 exception InvalidTableName
 
-(*Adds value to a column. Returns new column*)
+(*[add_to_col v c] is the column [c] with the value [v] added to it.*)
 val add_to_col : value -> column -> column
 
-(*Removes value from a column. Returns new column. Does not do anything if value
-  is not present in column*)
+(*[rem_from_col v c] is the column [c] with the value [v] removed from it.*)
 val rem_from_col : value -> column -> column
 
-(*Renames column*)
+(*[rename_col s c] is a copy of the column [c] with its name changed to [s].*)
 val rename_col : string -> column -> column
 
+(*[col_name c] is the name of the column c*)
 val col_name : column -> string
-(** Gets column name*)
 
-(*Creates a new, empty table, returns the table*)
+(*[get_col name tbl] is the is column with name [name] in table [tbl]*)
+val get_col : string -> table -> column
+
+(*[init_table name db] is the database [db] with an additional empty table with
+  name [name]*)
 val init_table : string -> db -> db
 
-(*List of columns in table*)
+(*[cols_of_table name db] is the list of columns in table [name] in db [db]*)
 val cols_of_table : string -> db -> column list
 
-val title_of_table : table -> string
-(**Title of table*)
+(*[table_title tbl] is the title of table [tbl] *)
+val table_title : table -> string
 
+(*[drop_tbl tbl db] is the database [db] with table [tbl] removed*)
 val drop_tbl : string -> db -> db
-(**New database with table with title [tbl] dropped*)
 
+(*[count_tbl tbl db] is a count of the columns in table [tbl] in database
+  [db] *)
 val count_tbl : string -> db -> int
-(**Number of rows in table [tbl]*)
-
-(**String repr of rows in table [tbl]*)
-(* val select_all: string -> db -> string *)

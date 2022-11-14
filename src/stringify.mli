@@ -1,16 +1,16 @@
 open Dbtype
 
-(*Returns string repr of value*)
+(*[stringify v] is the string representation of value [v]*)
 val stringify : value -> string
 
-(*Returns string repr of column*)
+(*[stringify c] is the string representation of column [c]*)
 val stringify_col : column -> string
 
-(*Returns string repr of table*)
+(*[stringify tbl] is the string representation of table [tbl]*)
 val stringify_table : table -> string
 
-(*Returns string repr of entire db*)
+(*[stringify db] is the string representation of database [db]*)
 val stringify_db : db -> string
 
-(*Saves db*)
+(*[save db file] saves the database [db] in file [file]*)
 val save : db -> string -> unit

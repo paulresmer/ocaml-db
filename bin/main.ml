@@ -51,7 +51,7 @@ let rec main_repl () =
               main_repl ()
         | DescribeTbls ->
             let tbls =
-              List.map (fun tbl -> title_of_table tbl) !current_database
+              List.map (fun tbl -> table_title tbl) !current_database
             in
             let tbls_str = String.concat "\n" tbls in
             if tbls_str <> "" then
