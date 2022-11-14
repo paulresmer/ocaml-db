@@ -5,6 +5,8 @@
 
 - Install ANSITerminal. Run [opam install ANSITerminal]
 
+- Install Yojson. Run [opam install yojson]
+
 - Run [dune build]
 
 - Run [make run]
