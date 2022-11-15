@@ -51,6 +51,9 @@ let rec main_repl () =
         | PrintTbl t ->
             print_table t;
             main_repl ()
+        | Push ->
+            push ();
+            main_repl ()
       with
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]

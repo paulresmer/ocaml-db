@@ -39,6 +39,8 @@ type command =
   | Quit
   (*The [PrintTbl t] command pretty-prints table [t].*)
   | PrintTbl of string
+  (*The [Push] command pushes the database to a remote URL.*)
+  | Push
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

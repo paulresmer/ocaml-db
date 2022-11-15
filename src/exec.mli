@@ -40,3 +40,6 @@ val quit : unit -> unit
 
 (*[print_table t] pretty-prints table [t]*)
 val print_table : string -> unit
+
+(*[push] pushes the current database to a remote URL*)
+val push : unit -> unit

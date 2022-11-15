@@ -13,6 +13,7 @@ type command =
   | AddCols of string list
   | Quit
   | PrintTbl of string
+  | Push
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -42,6 +43,7 @@ let parse s =
         | "ADD" -> AddCols t
         | "QUIT" -> Quit
         | "PRINT" -> PrintTbl (String.concat " " t)
+        | "PUSH" -> Push
         | _ -> raise Empty
       end
     | [] -> raise Empty

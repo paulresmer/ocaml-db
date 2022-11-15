@@ -4,6 +4,7 @@ open Db
 open Dbtype
 open Stringify
 open Printer
+open Cloud
 
 let current_file = ref "db"
 let current_database = ref (read_file !current_file)
@@ -106,3 +107,7 @@ let quit () =
 let print_table (name : string) =
   let tbl = find_table name !current_database in
   print_table tbl
+
+let push () =
+  save_to_cloud !current_database;
+  print_function "Pushed..." [ ANSITerminal.blue ]
