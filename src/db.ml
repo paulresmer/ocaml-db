@@ -117,3 +117,5 @@ let init_col (name : string) (c_type : string) (table : table) =
     | _ -> raise InvalidColType
   in
   add_to_tbl { name; values = []; col_type } table
+
+let rename_col (name : string) (col : column) = { col with name }
