@@ -11,6 +11,7 @@ type command =
   | CountTbl of string
   | InsertRow of string list
   | AddCols of string list
+  | Quit
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -39,6 +40,7 @@ let parse s =
         | "COUNT" -> CountTbl (String.concat " " t)
         | "INSERT" -> InsertRow t
         | "ADD" -> AddCols t
+        | "QUIT" -> Quit
         | _ -> raise Empty
       end
     | [] -> raise Empty

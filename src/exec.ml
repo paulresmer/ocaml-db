@@ -97,3 +97,7 @@ let add_col (vals : string list) =
     print_function
       ("Added column " ^ col_name ^ ":" ^ col_type ^ " to table " ^ tbl_name)
       [ ANSITerminal.cyan ]
+
+let quit () =
+  print_function "Quitting..." [ ANSITerminal.blue ];
+  Stdlib.exit 0

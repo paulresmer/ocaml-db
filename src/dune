@@ -1,4 +1,4 @@
 (library
  (name SQLDB)
  (public_name SQLDB)
- (libraries yojson ANSITerminal))
+ (libraries yojson ANSITerminal csv))
