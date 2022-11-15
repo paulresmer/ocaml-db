@@ -37,3 +37,6 @@ val help : unit -> unit
 
 (*[quit] exits the REPL*)
 val quit : unit -> unit
+
+(*[print_table t] pretty-prints table [t]*)
+val print_table : string -> unit

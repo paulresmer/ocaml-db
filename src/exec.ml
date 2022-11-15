@@ -3,6 +3,7 @@ open Destringify
 open Db
 open Dbtype
 open Stringify
+open Printer
 
 let current_file = ref "db"
 let current_database = ref (read_file !current_file)
@@ -79,7 +80,7 @@ let insert_into (vals : string list) =
         let new_tbl = insert_row vals tbl in
         let new_db = update_tbl new_tbl !current_database in
         let _ = current_database := new_db in
-        let _ = save !current_database !current_file in
+        let _ = save !current_database (!current_file ^ ".json") in
         print_function "Added value to column" [ ANSITerminal.cyan ]
 
 let add_col (vals : string list) =
@@ -93,7 +94,7 @@ let add_col (vals : string list) =
     in
     let new_db = update_tbl new_tbl !current_database in
     let _ = current_database := new_db in
-    let _ = save !current_database !current_file in
+    let _ = save !current_database (!current_file ^ ".json") in
     print_function
       ("Added column " ^ col_name ^ ":" ^ col_type ^ " to table " ^ tbl_name)
       [ ANSITerminal.cyan ]
@@ -101,3 +102,7 @@ let add_col (vals : string list) =
 let quit () =
   print_function "Quitting..." [ ANSITerminal.blue ];
   Stdlib.exit 0
+
+let print_table (name : string) =
+  let tbl = find_table name !current_database in
+  print_table tbl

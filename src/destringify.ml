@@ -51,7 +51,6 @@ let table_map_helper tbl =
 
 let read_file (name : string) : db =
   let path = name ^ ".json" in
-
   if not (Sys.file_exists path) then raise InvalidDB
   else
     let tables = Yojson.Basic.from_file path |> member "tables" |> to_list in

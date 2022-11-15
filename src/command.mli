@@ -37,6 +37,8 @@ type command =
   | AddCols of string list
   (*The [Quit] command exits the REPL.*)
   | Quit
+  (*The [PrintTbl t] command pretty-prints table [t].*)
+  | PrintTbl of string
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

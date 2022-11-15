@@ -48,6 +48,9 @@ let rec main_repl () =
             add_col t;
             main_repl ()
         | Quit -> quit ()
+        | PrintTbl t ->
+            print_table t;
+            main_repl ()
       with
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]
