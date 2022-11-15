@@ -26,9 +26,13 @@ val cols_of_table : string -> db -> column list
 (*[table_title tbl] is the title of table [tbl] *)
 val table_title : table -> string
 
-(*[drop_tbl tbl db] is the database [db] with table [tbl] removed*)
+(*[retitle_tbl name tbl] is table [tbl] with title [title]*)
+val retitle_tbl : string -> table -> table
+
+(*[drop_tbl title db] is the database [db] with the table [tbl] with title
+  [title] removed *)
 val drop_tbl : string -> db -> db
 
-(*[count_tbl tbl db] is a count of the columns in table [tbl] in database
-  [db] *)
+(*[count_tbl title db] is a count of the columns in the table [tbl] with title
+  [title] in database [db] *)
 val count_tbl : string -> db -> int

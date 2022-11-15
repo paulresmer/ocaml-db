@@ -1,3 +1,9 @@
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: Start test :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: Test :6:sample database with no tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: End test :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :6:sample database with no tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :20:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :20:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :20:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :27:db2 without tbl1 is db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :27:db2 without tbl1 is db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :27:db2 without tbl1 is db1.

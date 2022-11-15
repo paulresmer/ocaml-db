@@ -1,6 +1,15 @@
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Start test :4:sample table with one column.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Test :4:sample table with one column is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: End test :4:sample table with one column.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Start test :8:sample database with two tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Test :8:sample database with two tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: End test :8:sample database with two tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :4:sample table with one column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :4:sample table with one column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :4:sample table with one column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :13:name of col7 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :13:name of col7 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :13:name of col7 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :14:get col1 from tbl2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :24:title of tbl1 is "tbl1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :24:title of tbl1 is "tbl1" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :24:title of tbl1 is "tbl1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :28:db3 without tbl2 is db2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :28:db3 without tbl2 is db2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :28:db3 without tbl2 is db2.

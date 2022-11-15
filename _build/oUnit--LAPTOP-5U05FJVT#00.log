@@ -1,141 +1,237 @@
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Runner: processes
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Chooser: simple
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration suite_name = ""
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration cache_filename = "/home/paulresmer/cs3110/3110-final-proj/_build/oUnit-$(suite_name).cache"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration run_gc_full_major = "true"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration display = "true"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration results_style_1_X = "false"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration testdata_dir = "none"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration health_check_interval = "1."
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration verbose = "false"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration chooser = "simple"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_html_dir = "none"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration processes_kill_period = "5."
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration runner = "processes"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration shards = "8"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration processes_grace_period = "5."
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration log_encoding = "utf-8"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_junit_file = "none"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration ci = "false"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_file = "/home/paulresmer/cs3110/3110-final-proj/_build/oUnit-$(suite_name)-$(shard_id).log"
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Using 8 workers maximum.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#01.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#01 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#02.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#02 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#03.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#03 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#04.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#04 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#05.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#05 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#06.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#06 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#07.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#07 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#08.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#08 started.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#01 I: Start test :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Start test :1:sample col with one value.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: Start test :2:sample col with two values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: Start test :3:sample table with no columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Start test :4:sample table with one column.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#06 I: Start test :5:sample table with two columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: Start test :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#01 I: Test :0:sample col with no values is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Test :1:sample col with one value is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: Test :2:sample col with two values is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: Test :3:sample table with no columns is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Test :4:sample table with one column is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#08 I: Start test :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#01 I: End test :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: End test :1:sample col with one value.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: End test :2:sample col with two values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: End test :3:sample table with no columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: End test :4:sample table with one column.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#06 I: Test :5:sample table with two columns is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#06 I: End test :5:sample table with two columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 7 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 7 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: Test :6:sample database with no tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Start test :8:sample database with two tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: Start test :9:destringify db1.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: Start test :10:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Start test :11:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#07 I: End test :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#08 I: Test :7:sample database with one table is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 5 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 5 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#08 I: End test :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: Test :8:sample database with two tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 5 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 5 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#05 I: End test :8:sample database with two tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: Test :9:destringify db1.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 4 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 4 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#04 I: End test :9:destringify db1.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: Test :10:destringify db.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Test :11:destringify db.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 3 tests running : :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 3 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#03 I: End test :10:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: End test :11:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Still 2 tests running : :11:destringify db.json, :10:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 2 tests running: :11:destringify db.json, :10:destringify db.json.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: 0 tests running: .
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#01 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#06 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#07 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#08 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#05 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#04 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#03 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#02 has ended.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Used 8 worker during test execution.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 1 tests with shard LAPTOP-5U05FJVT#07.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 1 tests with shard LAPTOP-5U05FJVT#08.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 2 tests with shard LAPTOP-5U05FJVT#05.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 1 tests with shard LAPTOP-5U05FJVT#06.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 2 tests with shard LAPTOP-5U05FJVT#03.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 2 tests with shard LAPTOP-5U05FJVT#02.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 2 tests with shard LAPTOP-5U05FJVT#04.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Run 1 tests with shard LAPTOP-5U05FJVT#01.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#07, 6 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#08, 4 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#06, 8 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#05, 3 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#03, 1 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#04, 2 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#02, 1 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#01, 9 times.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: ==============
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Summary:
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :11:destringify db.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :10:destringify db.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :9:destringify db1.json is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :8:sample database with two tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :7:sample database with one table is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :6:sample database with no tables is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :5:sample table with two columns is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :4:sample table with one column is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :3:sample table with no columns is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :2:sample col with two values is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :1:sample col with one value is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Test :0:sample col with no values is successful.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Ran: 12 tests in: 0.10 seconds.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Cases: 12.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Tried: 12.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Errors: 0.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Failures: 0.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Skip: 0.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Todo: 0.
-2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#00 I: Timeout: 0.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Runner: processes
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Chooser: simple
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration suite_name = ""
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration cache_filename = "/home/paulresmer/cs3110/3110-final-proj/_build/oUnit-$(suite_name).cache"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration run_gc_full_major = "true"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration display = "true"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration results_style_1_X = "false"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration testdata_dir = "none"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration health_check_interval = "1."
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration verbose = "false"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration chooser = "simple"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_html_dir = "none"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration processes_kill_period = "5."
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration runner = "processes"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration shards = "8"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration processes_grace_period = "5."
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration log_encoding = "utf-8"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_junit_file = "none"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration ci = "false"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Configuration output_file = "/home/paulresmer/cs3110/3110-final-proj/_build/oUnit-$(suite_name)-$(shard_id).log"
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Using 8 workers maximum.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#01.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#01 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#02.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#02 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#03.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#03 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#04.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#04 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#05.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#05 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#06.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#06 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#07.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#07 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Starting worker number LAPTOP-5U05FJVT#08.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#08 started.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Start test :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Start test :1:sample col with one value.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :2:sample col with two values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :3:sample table with no columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :4:sample table with one column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :5:sample table with two columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Test :0:sample col with no values is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Test :1:sample col with one value is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :2:sample col with two values is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :3:sample table with no columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: End test :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: End test :1:sample col with one value.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :2:sample col with two values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :3:sample table with no columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :4:sample table with one column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :5:sample table with two columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column, :3:sample table with no columns, :2:sample col with two values, :1:sample col with one value, :0:sample col with no values.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :4:sample table with one column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :5:sample table with two columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables, :5:sample table with two columns, :4:sample table with one column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :8:sample database with two tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :9:destringify db1.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Start test :10:destringify db.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :13:name of col7 is "", :12:name of col1 is "col1", :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Start test :11:destringify db.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :12:name of col1 is "col1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :13:name of col7 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :13:name of col7 is "", :12:name of col1 is "col1", :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :6:sample database with no tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :7:sample database with one table.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :8:sample database with two tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :9:destringify db1.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Test :10:destringify db.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Test :11:destringify db.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :12:name of col1 is "col1" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :13:name of col7 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :13:name of col7 is "", :12:name of col1 is "col1", :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :7:sample database with one table is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :8:sample database with two tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :9:destringify db1.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: End test :10:destringify db.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: End test :11:destringify db.json.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :12:name of col1 is "col1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :13:name of col7 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :13:name of col7 is "", :12:name of col1 is "col1", :11:destringify db.json, :10:destringify db.json, :9:destringify db1.json, :8:sample database with two tables, :7:sample database with one table, :6:sample database with no tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :7:sample database with one table.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :20:initialize empty table in db1, :19:initialize empty table in db1, :18:rename col1 with name "", :17:get col2 from tbl3, :16:get col1 from tbl3, :15:get col1 from tbl2, :14:get col1 from tbl2, :7:sample database with one table.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :15:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Start test :17:get col2 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :18:rename col1 with name "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :20:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :21:columns of tbl1 are [], :20:initialize empty table in db1, :19:initialize empty table in db1, :18:rename col1 with name "", :17:get col2 from tbl3, :16:get col1 from tbl3, :15:get col1 from tbl2, :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :19:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :21:columns of tbl1 are [].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :21:columns of tbl1 are [], :20:initialize empty table in db1, :19:initialize empty table in db1, :18:rename col1 with name "", :17:get col2 from tbl3, :16:get col1 from tbl3, :15:get col1 from tbl2, :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :14:get col1 from tbl2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Test :17:get col2 from tbl3 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :18:rename col1 with name "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :21:columns of tbl1 are [], :20:initialize empty table in db1, :19:initialize empty table in db1, :18:rename col1 with name "", :17:get col2 from tbl3, :16:get col1 from tbl3, :15:get col1 from tbl2, :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :15:get col1 from tbl2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: End test :17:get col2 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :18:rename col1 with name "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :21:columns of tbl1 are [] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :21:columns of tbl1 are [], :20:initialize empty table in db1, :19:initialize empty table in db1, :18:rename col1 with name "", :17:get col2 from tbl3, :16:get col1 from tbl3, :15:get col1 from tbl2, :14:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :15:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :20:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :21:columns of tbl1 are [].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :21:columns of tbl1 are [], :20:initialize empty table in db1, :19:initialize empty table in db1, :16:get col1 from tbl3, :15:get col1 from tbl2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :20:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :22:columns of tbl2 are [col1].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Start test :23:columns of tbl3 are [col1; col2].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :24:title of tbl1 is "tbl1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :26:retitle tbl1 with title "", :25:title of tbl8 is "", :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :20:initialize empty table in db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :25:title of tbl8 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :26:retitle tbl1 with title "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Start test :27:db2 without tbl1 is db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :22:columns of tbl2 are [col1] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :24:title of tbl1 is "tbl1" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :22:columns of tbl2 are [col1].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :24:title of tbl1 is "tbl1".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :24:title of tbl1 is "tbl1", :23:columns of tbl3 are [col1; col2], :22:columns of tbl2 are [col1], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :25:title of tbl8 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :25:title of tbl8 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Start test :28:db3 without tbl2 is db2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :29:tbl1 in db2 has 0 columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :25:title of tbl8 is "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :30:tbl2 in db3 has 1 column, :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :30:tbl2 in db3 has 1 column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :30:tbl2 in db3 has 1 column, :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: Test :23:columns of tbl3 are [col1; col2] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :26:retitle tbl1 with title "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :29:tbl1 in db2 has 0 columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :30:tbl2 in db3 has 1 column, :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#02 I: End test :23:columns of tbl3 are [col1; col2].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :26:retitle tbl1 with title "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :29:tbl1 in db2 has 0 columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 8 tests running: :30:tbl2 in db3 has 1 column, :29:tbl1 in db2 has 0 columns, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :26:retitle tbl1 with title "", :23:columns of tbl3 are [col1; col2], :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :31:tbl3 in db5 has 2 columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Start test :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :19:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :30:tbl2 in db3 has 1 column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :31:tbl3 in db5 has 2 columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: Test :16:get col1 from tbl3 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :19:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: Test :27:db2 without tbl1 is db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: Test :28:db3 without tbl2 is db2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :30:tbl2 in db3 has 1 column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :31:tbl3 in db5 has 2 columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Still 6 tests running : :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 6 tests running: :31:tbl3 in db5 has 2 columns, :30:tbl2 in db3 has 1 column, :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :19:initialize empty table in db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#01 I: End test :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#07 I: End test :27:db2 without tbl1 is db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#05 I: End test :28:db3 without tbl2 is db2.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Still 3 tests running : :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 3 tests running: :28:db3 without tbl2 is db2, :27:db2 without tbl1 is db1, :16:get col1 from tbl3.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: 0 tests running: .
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#02 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#06 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#04 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#08 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#03 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#07 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#05 has ended.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Worker LAPTOP-5U05FJVT#01 died unexpectedly.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Used 8 worker during test execution.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 3 tests with shard LAPTOP-5U05FJVT#07.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 4 tests with shard LAPTOP-5U05FJVT#08.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 5 tests with shard LAPTOP-5U05FJVT#05.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 4 tests with shard LAPTOP-5U05FJVT#06.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 6 tests with shard LAPTOP-5U05FJVT#03.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 4 tests with shard LAPTOP-5U05FJVT#02.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 3 tests with shard LAPTOP-5U05FJVT#04.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Run 3 tests with shard LAPTOP-5U05FJVT#01.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#07, 1 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#08, 2 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#06, 6 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#05, 1 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#03, 2 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#02, 6 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#04, 2 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Check health of shard LAPTOP-5U05FJVT#01, 2 times.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: ==============
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Summary:
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :28:db3 without tbl2 is db2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :27:db2 without tbl1 is db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :16:get col1 from tbl3 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :31:tbl3 in db5 has 2 columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :30:tbl2 in db3 has 1 column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :19:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :29:tbl1 in db2 has 0 columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :26:retitle tbl1 with title "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :23:columns of tbl3 are [col1; col2] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :25:title of tbl8 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :24:title of tbl1 is "tbl1" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :22:columns of tbl2 are [col1] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :20:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :21:columns of tbl1 are [] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :15:get col1 from tbl2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :18:rename col1 with name "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :17:get col2 from tbl3 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :14:get col1 from tbl2 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :7:sample database with one table is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :13:name of col7 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :12:name of col1 is "col1" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :11:destringify db.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :10:destringify db.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :9:destringify db1.json is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :8:sample database with two tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :6:sample database with no tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :5:sample table with two columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :4:sample table with one column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :3:sample table with no columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :2:sample col with two values is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :1:sample col with one value is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Test :0:sample col with no values is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Ran: 32 tests in: 0.12 seconds.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Cases: 32.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Tried: 32.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Errors: 0.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Failures: 0.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Skip: 0.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Todo: 0.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#00 I: Timeout: 0.

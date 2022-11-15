@@ -54,6 +54,7 @@ let cols_of_table (name : string) (db : db) =
     table.cols
 
 let table_title (tbl : table) = tbl.title
+let retitle_tbl (title : string) (table : table) = { table with title }
 
 let drop_tbl (title : string) (db : db) =
   if not (List.mem title (List.map (fun table -> table.title) db)) then
