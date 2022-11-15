@@ -1,1 +1,1 @@
-{ "tables": [{ "title": "tbl1", "columns": []}]}
+{ "tables": [{ "title":"hello",  "columns": [{ "name":"birthday",  "values": ["November", "hello"],"type": "String"},{ "name":"name",  "values": ["Nirbhay", "hello", "hello"],"type": "String"},{ "name":"age",  "values": ["21", "12", "12"],"type": "Int"},{ "name":"loc",  "values": ["Ithaca", "hello", "hello"],"type": "String"},{ "name":"dorm",  "values": ["Dickson"],"type": "String"}]},{ "title":"newTable",  "columns": [{ "name":"age",  "values": [],"type": "Int"}]}]}

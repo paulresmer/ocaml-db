@@ -29,6 +29,12 @@ type command =
   (*The [CountTbl name] command counts the number of tables in the current
     database*)
   | CountTbl of string
+  (*The [InsertRow lst] command parses the list [lst] and inserts the specified
+    values into the specified table*)
+  | InsertRow of string list
+    (*The [InsertRow lst] command parses the list [lst] and adds the specified
+      columns into the specified table*)
+  | AddCols of string list
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

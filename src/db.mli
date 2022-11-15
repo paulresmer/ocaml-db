@@ -2,6 +2,9 @@ open Dbtype
 
 exception InvalidAdd
 exception InvalidTableName
+exception InvalidInsert
+exception InvalidColType
+exception ColumnValueMismatch
 
 (*[insert_row v_l t] is the table [t] with a new row of values [v_l] appended to
   it.*)
@@ -20,6 +23,10 @@ val rename_col : string -> column -> column
   name [name]*)
 val init_table : string -> db -> db
 
+(*[primitive_to_values s c] is the list of values resulting from converting each
+  string element of [s] to a value, based on the types of the column [c]*)
+val primitive_to_values : string list -> column list -> value list -> value list
+
 (*[cols_of_table name db] is the list of columns in table [name] in db [db]*)
 val cols_of_table : string -> db -> column list
 
@@ -36,3 +43,13 @@ val drop_tbl : string -> db -> db
 (*[count_tbl title db] is a count of the columns in the table [tbl] with title
   [title] in database [db] *)
 val count_tbl : string -> db -> int
+
+(*[find_table tbl db] is the table with name [tbl] in database [db]*)
+val find_table : string -> db -> table
+
+(*[update_tbl tbl db] is the database [db] with table [tbl] updated*)
+val update_tbl : table -> db -> db
+
+(*[init_col name type table] is the table [table] with a new column with name
+  [name] and column type [type]*)
+val init_col : string -> string -> table -> table
