@@ -9,6 +9,8 @@ type command =
   | LoadDB of string
   | DropTbl of string
   | CountTbl of string
+  | InsertRow of string list
+  | AddCols of string list
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -35,6 +37,8 @@ let parse s =
         | "TBLS" -> DescribeTbls
         | "DROP" -> DropTbl (String.concat " " t)
         | "COUNT" -> CountTbl (String.concat " " t)
+        | "INSERT" -> InsertRow t
+        | "ADD" -> AddCols t
         | _ -> raise Empty
       end
     | [] -> raise Empty
