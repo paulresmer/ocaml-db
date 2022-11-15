@@ -82,6 +82,7 @@ let find_table (name : string) (db : db) =
   else List.find (fun elt -> elt.title = name) db
 
 let table_title (tbl : table) = tbl.title
+let retitle_tbl (title : string) (table : table) = { table with title }
 
 let drop_tbl (title : string) (db : db) =
   if not (List.mem title (List.map (fun table -> table.title) db)) then
@@ -112,3 +113,5 @@ let init_col (name : string) (c_type : string) (table : table) =
     | _ -> raise InvalidColType
   in
   add_to_tbl { name; values = []; col_type } table
+
+let rename_col (name : string) (col : column) = { col with name }

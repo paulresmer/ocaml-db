@@ -1,0 +1,18 @@
+{
+  "tables": [
+    {
+      "title": "tbl1",
+      "columns": []
+    },
+    {
+      "title": "tbl2",
+      "columns": [
+        {
+          "name": "col1",
+          "values": [],
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}

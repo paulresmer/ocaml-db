@@ -1,0 +1,12 @@
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :7:sample database with one table.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :7:sample database with one table is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :7:sample database with one table.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :21:columns of tbl1 are [].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :21:columns of tbl1 are [] is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :21:columns of tbl1 are [].
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :25:title of tbl8 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :25:title of tbl8 is "" is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :25:title of tbl8 is "".
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Start test :30:tbl2 in db3 has 1 column.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: Test :30:tbl2 in db3 has 1 column is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#08 I: End test :30:tbl2 in db3 has 1 column.

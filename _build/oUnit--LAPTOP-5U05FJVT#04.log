@@ -1,0 +1,9 @@
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :3:sample table with no columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :3:sample table with no columns is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :3:sample table with no columns.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :8:sample database with two tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :8:sample database with two tables is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :8:sample database with two tables.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Start test :19:initialize empty table in db1.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: Test :19:initialize empty table in db1 is successful.
+2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#04 I: End test :19:initialize empty table in db1.
