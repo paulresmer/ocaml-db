@@ -1,18 +1,12 @@
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :2:sample col with two values.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :2:sample col with two values is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :2:sample col with two values.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :9:destringify db1.json.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :9:destringify db1.json is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :9:destringify db1.json.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :18:rename col1 with name "".
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :18:rename col1 with name "" is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :18:rename col1 with name "".
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :22:columns of tbl2 are [col1].
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :22:columns of tbl2 are [col1] is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :22:columns of tbl2 are [col1].
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :29:tbl1 in db2 has 0 columns.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :29:tbl1 in db2 has 0 columns is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :29:tbl1 in db2 has 0 columns.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Start test :31:tbl3 in db5 has 2 columns.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: Test :31:tbl3 in db5 has 2 columns is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#03 I: End test :31:tbl3 in db5 has 2 columns.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Start test :2:sample col with two values.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Test :2:sample col with two values is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: End test :2:sample col with two values.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Start test :9:destringify db1.json.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Test :9:destringify db1.json is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: End test :9:destringify db1.json.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Start test :18:get col1 from tbl3.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Test :18:get col1 from tbl3 is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: End test :18:get col1 from tbl3.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Start test :27:title of tbl8 is "".
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: Test :27:title of tbl8 is "" is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#03 I: End test :27:title of tbl8 is "".

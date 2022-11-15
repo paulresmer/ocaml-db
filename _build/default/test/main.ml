@@ -110,8 +110,8 @@ let destringify_test (name : string) (expected : Dbtype.db) (input : string) =
 let destringify_tests =
   [
     destringify_test "destringify db1.json" db1 "db1";
-    destringify_test "destringify db.json" db2 "db2";
-    destringify_test "destringify db.json" db3 "db3";
+    destringify_test "destringify db2.json" db2 "db2";
+    destringify_test "destringify db3.json" db3 "db3";
   ]
 
 (*test Db*)
@@ -204,7 +204,15 @@ let db_tests =
   ]
 
 (*test Command*)
-let command_tests = []
+
+let parse_test (name : string) (expected : Command.command) (input : string) =
+  name >:: fun _ -> assert_equal expected (Command.parse input)
+
+let command_tests =
+  [
+    parse_test "HELP is HELP" Command.Help "HELP";
+    parse_test "HELP is HELP" Command.Help "HELP";
+  ]
 
 (*test Dbtype*)
 let dbtype_tests = []

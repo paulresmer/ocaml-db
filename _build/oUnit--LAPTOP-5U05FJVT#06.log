@@ -1,12 +1,12 @@
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :5:sample table with two columns.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :5:sample table with two columns is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :5:sample table with two columns.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :12:name of col1 is "col1".
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :12:name of col1 is "col1" is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :12:name of col1 is "col1".
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :15:get col1 from tbl2.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :15:get col1 from tbl2 is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :15:get col1 from tbl2.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Start test :26:retitle tbl1 with title "".
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: Test :26:retitle tbl1 with title "" is successful.
-2022-11-15T04:43:06+00:00 LAPTOP-5U05FJVT#06 I: End test :26:retitle tbl1 with title "".
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Start test :5:sample table with two columns.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Test :5:sample table with two columns is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: End test :5:sample table with two columns.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Start test :12:HELP is HELP.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Test :12:HELP is HELP is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: End test :12:HELP is HELP.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Start test :21:initialize empty table in db1.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Test :21:initialize empty table in db1 is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: End test :21:initialize empty table in db1.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Start test :30:db3 without tbl2 is db2.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: Test :30:db3 without tbl2 is db2 is successful.
+2022-11-15T06:13:38+00:00 LAPTOP-5U05FJVT#06 I: End test :30:db3 without tbl2 is db2.

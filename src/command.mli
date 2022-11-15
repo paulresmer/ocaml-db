@@ -9,7 +9,7 @@ exception Malformed
 (*A value of type [command] represents a particular command that can be input by
   a user to interact with the database*)
 type command =
-  (*The [Help] command displays the help meny*)
+  (*The [Help] command displays the help menu *)
   | Help
   (*The [TableInit name] command creates a new table in the current database
     with name [name]*)

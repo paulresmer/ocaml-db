@@ -1,1 +1,8 @@
-{ "tables": [{ "title": "tbl1", "columns": []}]}
+{
+  "tables": [
+    {
+      "title": "tbl1",
+      "columns": []
+    }
+  ]
+}
