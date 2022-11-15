@@ -14,11 +14,7 @@ let add_to_col (value : value) (column : column) =
     | VFloat f, TFloat -> VFloat f :: column.values
     | VString s, TString -> VString s :: column.values
     | VBool b, TBool -> VBool b :: column.values
-    | x, y ->
-        print_endline column.name;
-        print_endline (to_string x);
-        print_endline (type_to_string y);
-        raise InvalidAdd
+    | _, _ -> raise InvalidAdd
   in
   { column with values = new_vals }
 
