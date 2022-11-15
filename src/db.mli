@@ -10,8 +10,11 @@ val insert_row : value list -> table -> table
 (*[col_name c] is the name of the column c*)
 val col_name : column -> string
 
-(*[get_col name tbl] is the is column with name [name] in table [tbl]*)
+(*[get_col name tbl] is the column with name [name] in table [tbl]*)
 val get_col : string -> table -> column
+
+(*[rename_col name col] is column [col] with name [name]*)
+val rename_col : string -> column -> column
 
 (*[init_table name db] is the database [db] with an additional empty table with
   name [name]*)

@@ -1,0 +1,6 @@
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Start test :1:sample col with one value.
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Test :1:sample col with one value is successful.
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: End test :1:sample col with one value.
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Start test :11:destringify db.json.
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: Test :11:destringify db.json is successful.
+2022-11-15T01:57:20+00:00 LAPTOP-5U05FJVT#02 I: End test :11:destringify db.json.
