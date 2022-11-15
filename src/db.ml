@@ -112,6 +112,20 @@ let init_col (name : string) (c_type : string) (table : table) =
     | "STRING" -> TString
     | _ -> raise InvalidColType
   in
-  add_to_tbl { name; values = []; col_type } table
+
+  let cols = table.cols in
+  let rec find_max_size cols acc =
+    match cols with
+    | [] -> acc
+    | h :: t ->
+        if List.length h.values > acc then
+          find_max_size t (List.length h.values)
+        else find_max_size t acc
+  in
+  let max_size = find_max_size cols 0 in
+  let values =
+    if max_size <> 0 then List.init max_size (fun _ -> Dbtype.null) else []
+  in
+  add_to_tbl { name; values; col_type } table
 
 let rename_col (name : string) (col : column) = { col with name }

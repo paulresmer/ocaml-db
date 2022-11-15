@@ -5,6 +5,7 @@ type value =
   | VString of string
   | VFloat of float
   | VBool of bool
+  | VNull
 
 (*A value of type [col_type] represents the types of value a column can have*)
 type col_type =
@@ -50,3 +51,6 @@ val from_string : string -> value
 
 (*[from_bool b] is a value of type [value] representing the boolean [b]*)
 val from_bool : bool -> value
+
+(*[null ] creates a Null value *)
+val null : value

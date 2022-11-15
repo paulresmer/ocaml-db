@@ -3,6 +3,7 @@ type value =
   | VString of string
   | VFloat of float
   | VBool of bool
+  | VNull
 
 type col_type =
   | TInt
@@ -28,6 +29,7 @@ let to_string = function
   | VString s -> s
   | VFloat f -> string_of_float f
   | VBool b -> string_of_bool b
+  | VNull -> "NULL"
 
 let type_to_string = function
   | TInt -> "Int"
@@ -39,3 +41,4 @@ let from_int i = VInt i
 let from_string s = VString s
 let from_float f = VFloat f
 let from_bool b = VBool b
+let null = VNull
