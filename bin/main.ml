@@ -72,7 +72,19 @@ let rec main_repl () =
         | Pull t ->
             pull t;
             main_repl ()
+        | FindPrim t ->
+            find_all t;
+            main_repl ()
       with
+      | Invalid_argument _ ->
+          print_function "Could not find a valid row with that id."
+            [ ANSITerminal.red ] main_repl ()
+      | Not_found ->
+          print_function "Could not find a valid row with that id."
+            [ ANSITerminal.red ] main_repl ()
+      | InvalidFind ->
+          print_function "Could not find a valid row with that id."
+            [ ANSITerminal.red ] main_repl ()
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]
             main_repl ()

@@ -9,6 +9,7 @@ exception InvalidColumn
 exception InvalidNumericColumn
 exception PrimaryColumnAlreadyExists
 exception PrimaryKeyAlreadyExists
+exception InvalidFind
 
 (*[insert_row v_l t] is the table [t] with a new row of values [v_l] appended to
   it.*)
@@ -57,3 +58,6 @@ val update_tbl : table -> db -> db
 (*[init_col name type table] is the table [table] with a new column with name
   [name] and column type [type]*)
 val init_col : string -> string -> table -> table
+
+(*[find_prim id table] returns the row with id [id] in table [table]*)
+val find_prim : int -> table -> string list

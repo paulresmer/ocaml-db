@@ -32,8 +32,8 @@ let save_to_cloud db =
     let id = List.assoc "id" metadata_assoc in
     let id_string = Yojson.Basic.to_string id in
     let clean = Str.(global_replace (regexp "\"") "" id_string) in
-    let url = "URL: " ^ "https://api.jsonbin.io/v3/b/" ^ clean in
-    print_function url [ ANSITerminal.red ];
+    let id = "ID: " ^ clean in
+    print_function id [ ANSITerminal.red ];
     print_endline ""
   in
   Lwt_main.run request

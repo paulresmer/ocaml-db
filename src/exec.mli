@@ -62,3 +62,7 @@ val min : string -> unit
 (*[pull id] sets the current database to be the database with id [id] on the
   cloud*)
 val pull : string -> unit
+
+(*[find_all vals] finds the rows with id spec in [vals] in table spec in
+  [vals]*)
+val find_all : string list -> unit

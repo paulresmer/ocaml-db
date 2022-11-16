@@ -53,6 +53,9 @@ type command =
   | Min of string
   (*The [Pull id] command downloads the database with id [id] from the cloud*)
   | Pull of string
+  (*The [FindPrim lst] command finds the row with Primary Key specified in lst
+    in table specified in lst*)
+  | FindPrim of string list
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

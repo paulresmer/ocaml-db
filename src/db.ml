@@ -10,6 +10,7 @@ exception InvalidColumn
 exception PrimaryColumnAlreadyExists
 exception InvalidNumericColumn
 exception PrimaryKeyAlreadyExists
+exception InvalidFind
 
 let add_to_col (value : value) (column : column) =
   let new_vals =
@@ -160,3 +161,42 @@ let init_col (name : string) (c_type : string) (table : table) =
   add_to_tbl { name; values; col_type } table
 
 let rename_col (name : string) (col : column) = { col with name }
+
+let find_prim (key : int) (table : table) =
+  if not (check_if_primary_exists table) then raise InvalidFind
+  else
+    let rec find_idx (cols : column list) =
+      match cols with
+      | [] -> raise InvalidFind
+      | h :: t -> (
+          match h.col_type with
+          | TPrim ->
+              let vals =
+                List.map
+                  (fun elt ->
+                    match elt with
+                    | VPrim i -> i
+                    | _ -> raise InvalidFind)
+                  h.values
+              in
+              let rec find_by_index (lst : int list) (key : int) (acc : int) =
+                match lst with
+                | [] -> -1
+                | h :: t ->
+                    if h = key then acc else find_by_index t key (acc + 1)
+              in
+              find_by_index vals key 0
+          | _ -> find_idx t)
+    in
+    let index = find_idx table.cols in
+    let rec find_all (cols : column list) (acc : string list) =
+      match cols with
+      | [] -> acc
+      | h :: t ->
+          let str =
+            h.name ^ "(" ^ type_to_string h.col_type ^ "): "
+            ^ to_string (List.nth h.values index)
+          in
+          find_all t (str :: acc)
+    in
+    find_all table.cols []

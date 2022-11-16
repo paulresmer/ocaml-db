@@ -33,7 +33,9 @@ let help () =
      MAX t.c: Print the max value of column c in table c, if column is numeric.\n\
      MIN t.c: Print the min of column c in table c, if column is numeric.\n\
      PRINT t: Print table t\n\
-     PRINT t.c: Print column c in table t" [ ANSITerminal.cyan ]
+     PRINT t.c: Print column c in table t\n\
+     PULL id: Set current database as the database with remote id id"
+    [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
   let newdb = init_table name !current_database in
@@ -213,3 +215,13 @@ let pull (name : string) =
   current_database := db;
   save !current_database "db.json";
   print_function "Pulled from remote and updated db.json" [ ANSITerminal.blue ]
+
+let find_all (vals : string list) =
+  if List.length vals <> 3 then raise Malformed
+  else if List.nth vals 1 |> String.uppercase_ascii <> "IN" then raise Malformed
+  else
+    let tbl_name = List.hd (List.rev vals) in
+    let key = int_of_string (List.hd vals) in
+    let tbl = find_table tbl_name !current_database in
+    let vals = find_prim key tbl in
+    print_function (String.concat " | " vals) [ ANSITerminal.cyan ]

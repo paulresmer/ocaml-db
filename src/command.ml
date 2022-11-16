@@ -20,6 +20,7 @@ type command =
   | Max of string
   | Min of string
   | Pull of string
+  | FindPrim of string list
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -56,6 +57,7 @@ let parse s =
         | "MAX" -> Max (String.concat " " t)
         | "MIN" -> Min (String.concat " " t)
         | "PULL" -> Pull (String.concat " " t)
+        | "FINDPRIM" -> FindPrim t
         | _ -> raise Empty
       end
     | [] -> raise Empty
