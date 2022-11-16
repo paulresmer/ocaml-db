@@ -57,10 +57,25 @@ let rec main_repl () =
         | SaveCSV t ->
             save_csv t;
             main_repl ()
+        | Sum t ->
+            sum t;
+            main_repl ()
+        | Mean t ->
+            mean t;
+            main_repl ()
+        | Max t ->
+            max t;
+            main_repl ()
+        | Min t ->
+            min t;
+            main_repl ()
       with
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]
             main_repl ()
+      | InvalidNumericColumn ->
+          print_function "Cannot sum over specified column."
+            [ ANSITerminal.red ] main_repl ()
       | Malformed ->
           print_function "Invalid input. Enter HELP." [ ANSITerminal.red ]
             main_repl ()
@@ -78,6 +93,9 @@ let rec main_repl () =
           print_function "Invalid file." [ ANSITerminal.red ] main_repl ()
       | InvalidColType ->
           print_function "Invalid column type." [ ANSITerminal.red ] main_repl
+            ()
+      | InvalidColumn ->
+          print_function "Column does not exist." [ ANSITerminal.red ] main_repl
             ())
 
 (*run REPL loop*)

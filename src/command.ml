@@ -15,6 +15,10 @@ type command =
   | PrintTbl of string
   | Push
   | SaveCSV of string
+  | Sum of string
+  | Mean of string
+  | Max of string
+  | Min of string
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -46,6 +50,10 @@ let parse s =
         | "PRINT" -> PrintTbl (String.concat " " t)
         | "PUSH" -> Push
         | "SAVECSV" -> SaveCSV (String.concat " " t)
+        | "SUM" -> Sum (String.concat " " t)
+        | "MEAN" -> Mean (String.concat " " t)
+        | "MAX" -> Max (String.concat " " t)
+        | "MIN" -> Min (String.concat " " t)
         | _ -> raise Empty
       end
     | [] -> raise Empty

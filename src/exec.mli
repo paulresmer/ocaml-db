@@ -46,3 +46,15 @@ val push : unit -> unit
 
 (*[save_csv t] saves table [t] as a csv*)
 val save_csv : string -> unit
+
+(*[sum t.c] prints the sum of column c in table t*)
+val sum : string -> unit
+
+(*[mean t.c] prints the mean of column c in table t*)
+val mean : string -> unit
+
+(*[max t.c] prints the max of column c in table t*)
+val max : string -> unit
+
+(*[min t.c] prints the min of column c in table t*)
+val min : string -> unit

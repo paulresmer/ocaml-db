@@ -6,6 +6,8 @@ exception InvalidTableName
 exception InvalidInsert
 exception InvalidColType
 exception ColumnValueMismatch
+exception InvalidColumn
+exception InvalidNumericColumn
 
 let add_to_col (value : value) (column : column) =
   let new_vals =

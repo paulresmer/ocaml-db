@@ -14,7 +14,10 @@ let col_map_helper col =
         col_type = TInt;
         values =
           List.map
-            (fun elt -> elt |> to_string |> int_of_string |> from_int)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then 0 else int_of_string elt)
+              |> from_int)
             values;
         name;
       }
@@ -29,7 +32,10 @@ let col_map_helper col =
         col_type = TFloat;
         values =
           List.map
-            (fun elt -> elt |> to_string |> float_of_string |> from_float)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then 0. else float_of_string elt)
+              |> from_float)
             values;
         name;
       }
@@ -38,7 +44,10 @@ let col_map_helper col =
         col_type = TBool;
         values =
           List.map
-            (fun elt -> elt |> to_string |> bool_of_string |> from_bool)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then false else bool_of_string elt)
+              |> from_bool)
             values;
         name;
       }

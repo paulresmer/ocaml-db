@@ -5,6 +5,7 @@ open Dbtype
 open Stringify
 open Printer
 open Cloud
+open Stats
 open Csv_write
 
 let current_file = ref "db"
@@ -70,7 +71,9 @@ let count_tbl (name : string) =
   print_function ("COUNT:" ^ string_of_int sz) [ ANSITerminal.cyan ]
 
 let insert_into (vals : string list) =
-  if List.nth vals 1 |> String.capitalize_ascii <> "INTO" then raise Malformed
+  if List.length vals <> 4 then raise Malformed
+  else if List.nth vals 1 |> String.capitalize_ascii <> "INTO" then
+    raise Malformed
   else
     let tbl_name = List.hd (List.rev vals) in
     match cols_of_table tbl_name !current_database with
@@ -108,8 +111,20 @@ let quit () =
   Stdlib.exit 0
 
 let print_table (name : string) =
-  let tbl = find_table name !current_database in
-  print_table tbl
+  if not (String.contains name '.') then
+    let tbl = find_table name !current_database in
+    print_table tbl
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c -> print_col c
 
 let push () =
   save_to_cloud !current_database;
@@ -119,3 +134,71 @@ let save_csv (name : string) =
   let tbl = find_table name !current_database in
   save_csv tbl;
   print_function ("Saved: ~/Users/" ^ name ^ ".csv") [ ANSITerminal.blue ]
+
+let sum (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Sum of " ^ name ^ " :" ^ string_of_float (sum c))
+            [ ANSITerminal.blue ]
+
+let mean (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Mean of " ^ name ^ " :" ^ string_of_float (mean c))
+            [ ANSITerminal.blue ]
+
+let max (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Max of " ^ name ^ " :" ^ string_of_float (max c))
+            [ ANSITerminal.blue ]
+
+let min (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Min of " ^ name ^ " :" ^ string_of_float (min c))
+            [ ANSITerminal.blue ]

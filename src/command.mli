@@ -43,6 +43,14 @@ type command =
   | Push
   (*The [SaveCSV t] exports table [t] as a csv file*)
   | SaveCSV of string
+  (*The [Sum t.c] command returns the sum of column [c] in table [t]*)
+  | Sum of string
+  (*The [Mean t.c] command returns the mean of column [c] in table [t]*)
+  | Mean of string
+  (*The [Max t.c] command returns the max of column [c] in table [t]*)
+  | Max of string
+  (*The [Min t.c] command returns min max of column [c] in table [t]*)
+  | Min of string
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a
