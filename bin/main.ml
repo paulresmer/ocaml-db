@@ -75,6 +75,9 @@ let rec main_repl () =
         | FindPrim t ->
             find_all t;
             main_repl ()
+        | Median t ->
+            find_median t;
+            main_repl ()
       with
       | Invalid_argument _ ->
           print_function "Could not find a valid row with that id."

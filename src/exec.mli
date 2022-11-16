@@ -66,3 +66,6 @@ val pull : string -> unit
 (*[find_all vals] finds the rows with id spec in [vals] in table spec in
   [vals]*)
 val find_all : string list -> unit
+
+(*[find_median t.c] prints the median of column c in table t*)
+val find_median : string -> unit

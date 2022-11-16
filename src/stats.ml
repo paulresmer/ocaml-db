@@ -108,3 +108,20 @@ let min (c : column) =
   | TInt -> float_of_int (min_int c)
   | TFloat -> min_flt c
   | _ -> raise InvalidNumericColumn
+
+let median (c : column) =
+  let values =
+    List.map
+      (fun elt ->
+        match elt with
+        | VInt i -> float_of_int i
+        | VFloat f -> f
+        | VNull -> 0.
+        | _ -> raise InvalidNumericColumn)
+      c.values
+  in
+  let sorted = List.sort Stdlib.compare values in
+  if List.length sorted mod 2 = 1 then List.nth sorted (List.length sorted / 2)
+  else
+    List.nth sorted (List.length sorted / 2)
+    +. (List.nth sorted ((List.length sorted / 2) - 1) /. 2.)

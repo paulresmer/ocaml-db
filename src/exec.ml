@@ -34,7 +34,8 @@ let help () =
      MIN t.c: Print the min of column c in table c, if column is numeric.\n\
      PRINT t: Print table t\n\
      PRINT t.c: Print column c in table t\n\
-     PULL id: Set current database as the database with remote id id"
+     PULL id: Set current database as the database with aa given remote id\n\
+     FINDPRIM n IN t: Print row in t with primary key n\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -225,3 +226,20 @@ let find_all (vals : string list) =
     let tbl = find_table tbl_name !current_database in
     let vals = find_prim key tbl in
     print_function (String.concat " | " vals) [ ANSITerminal.cyan ]
+
+let find_median (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Median of " ^ name ^ " :" ^ string_of_float (median c))
+            [ ANSITerminal.blue ]

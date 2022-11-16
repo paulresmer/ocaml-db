@@ -47,6 +47,8 @@ type command =
   | Sum of string
   (*The [Mean t.c] command returns the mean of column [c] in table [t]*)
   | Mean of string
+  (*The [Median t.c] command returns the median of column [c] in table [t]*)
+  | Median of string
   (*The [Max t.c] command returns the max of column [c] in table [t]*)
   | Max of string
   (*The [Min t.c] command returns min max of column [c] in table [t]*)

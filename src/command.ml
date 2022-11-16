@@ -17,6 +17,7 @@ type command =
   | SaveCSV of string
   | Sum of string
   | Mean of string
+  | Median of string
   | Max of string
   | Min of string
   | Pull of string
@@ -58,6 +59,7 @@ let parse s =
         | "MIN" -> Min (String.concat " " t)
         | "PULL" -> Pull (String.concat " " t)
         | "FINDPRIM" -> FindPrim t
+        | "MEDIAN" -> Median (String.concat " " t)
         | _ -> raise Empty
       end
     | [] -> raise Empty
