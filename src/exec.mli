@@ -69,3 +69,6 @@ val find_all : string list -> unit
 
 (*[find_median t.c] prints the median of column c in table t*)
 val find_median : string -> unit
+
+(*[find_variance t.c] prints the variance of column c in table t*)
+val find_variance : string -> unit

@@ -125,3 +125,22 @@ let median (c : column) =
   else
     List.nth sorted (List.length sorted / 2)
     +. (List.nth sorted ((List.length sorted / 2) - 1) /. 2.)
+
+let variance (c : column) =
+  let mean = mean c in
+  let values =
+    List.map
+      (fun elt ->
+        match elt with
+        | VInt i -> float_of_int i
+        | VFloat f -> f
+        | VNull -> 0.
+        | _ -> raise InvalidNumericColumn)
+      c.values
+  in
+  let rec sum (lst : float list) (mean : float) (acc : float) =
+    match lst with
+    | [] -> acc
+    | h :: t -> sum t mean (acc +. ((h -. mean) *. (h -. mean)))
+  in
+  sum values mean 0. /. (float_of_int (List.length values) -. 1.)

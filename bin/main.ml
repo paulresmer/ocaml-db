@@ -78,7 +78,12 @@ let rec main_repl () =
         | Median t ->
             find_median t;
             main_repl ()
+        | Var t ->
+            find_variance t;
+            main_repl ()
       with
+      | Failure _ ->
+          print_function "Invalid argument." [ ANSITerminal.red ] main_repl ()
       | Invalid_argument _ ->
           print_function "Could not find a valid row with that id."
             [ ANSITerminal.red ] main_repl ()

@@ -17,25 +17,34 @@ let print_function msg color =
 
 let help () =
   print_function
-    "Available commands\n\
-     CREATE t: create a new,empty table with name t.\n\
-     COLS t: Print the columns of table t\n\
-     LOAD n: Load file n.json as the current database.\n\
-     TBLS: Display current tables.\n\
-     DROP t: Drop table t from the db.\n\
-     COUNT t: Display number of rows in table t.\n\
-     ADD col TYPE to t: Add a new column col of type T YPE to table t\n\
-     INSERT x1;...;xn INTO t: Add a new row to table t\n\
-     PUSH: Push current database to a remote URL as JSON\n\
-     SAVECSV t: Export table [t] as a .csv file\n\
-     MEAN t.c: Print the average of column c in table c, if column is numeric.\n\
-     SUM t.c: Print the sum of column c in table c, if column is numeric.\n\
-     MAX t.c: Print the max value of column c in table c, if column is numeric.\n\
-     MIN t.c: Print the min of column c in table c, if column is numeric.\n\
-     PRINT t: Print table t\n\
-     PRINT t.c: Print column c in table t\n\
-     PULL id: Set current database as the database with aa given remote id\n\
-     FINDPRIM n IN t: Print row in t with primary key n\n"
+    "Available commands\n\n\
+     Database CRUD: \n\
+     >> CREATE t: create a new,empty table with name t.\n\
+     >> COLS t: Print the columns of table t\n\
+     >> LOAD n: Load file n.json as the current database.\n\
+     >> TBLS: Display current tables.\n\
+     >> DROP t: Drop table t from the db.\n\
+     >> COUNT t: Display number of rows in table t.\n\
+     >> ADD col TYPE to t: Add a new column col of type T YPE to table t\n\
+     >> INSERT x1;...;xn INTO t: Add a new row to table t\n\n\
+     Cloud Version Control: \n\
+     >> PUSH: Push current database to a remote URL as JSON\n\
+     >> PULL id: Set current database as the database with aa given remote id\n\n\
+     Visualize: \n\
+     >> SAVECSV t: Export table [t] as a .csv file\n\
+     >> PRINT t: Print table t\n\
+     >> PRINT t.c: Print column c in table t\n\n\
+     Statistics: \n\
+     >> MEAN t.c: Print the average of column c in table c, if column is \
+     numeric.\n\
+     >> MEDIAN t.c: Print the median of column c in table c, if column is \
+     numeric.\n\
+     >> SUM t.c: Print the sum of column c in table c, if column is numeric.\n\
+     >> MAX t.c: Print the max value of column c in table c, if column is \
+     numeric.\n\
+     >> MIN t.c: Print the min of column c in table c, if column is numeric.\n\n\
+     Query: \n\
+     >> FINDPRIM n IN t: Print row in t with primary key n\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -242,4 +251,21 @@ let find_median (name : string) =
       | Some c ->
           print_function
             ("Median of " ^ name ^ " :" ^ string_of_float (median c))
+            [ ANSITerminal.blue ]
+
+let find_variance (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Variance of " ^ name ^ " :" ^ string_of_float (variance c))
             [ ANSITerminal.blue ]

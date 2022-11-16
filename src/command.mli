@@ -53,6 +53,8 @@ type command =
   | Max of string
   (*The [Min t.c] command returns min max of column [c] in table [t]*)
   | Min of string
+  (*The [Var t.c] command returns the variance of column [c] in table [t]*)
+  | Var of string
   (*The [Pull id] command downloads the database with id [id] from the cloud*)
   | Pull of string
   (*The [FindPrim lst] command finds the row with Primary Key specified in lst
