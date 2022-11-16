@@ -27,8 +27,13 @@ let help () =
      ADD col TYPE to t: Add a new column col of type T YPE to table t\n\
      INSERT x1;...;xn INTO t: Add a new row to table t\n\
      PUSH: Push current database to a remote URL as JSON\n\
-     SAVECSV t: Export table [t] as a .csv file\n"
-    [ ANSITerminal.cyan ]
+     SAVECSV t: Export table [t] as a .csv file\n\
+     MEAN t.c: Print the average of column c in table c, if column is numeric.\n\
+     SUM t.c: Print the sum of column c in table c, if column is numeric.\n\
+     MAX t.c: Print the max value of column c in table c, if column is numeric.\n\
+     MIN t.c: Print the min of column c in table c, if column is numeric.\n\
+     PRINT t: Print table t\n\
+     PRINT t.c: Print column c in table t" [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
   let newdb = init_table name !current_database in
