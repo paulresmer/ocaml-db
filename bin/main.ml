@@ -54,6 +54,9 @@ let rec main_repl () =
         | Push ->
             push ();
             main_repl ()
+        | SaveCSV t ->
+            save_csv t;
+            main_repl ()
       with
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]

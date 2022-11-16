@@ -41,6 +41,8 @@ type command =
   | PrintTbl of string
   (*The [Push] command pushes the database to a remote URL.*)
   | Push
+  (*The [SaveCSV t] exports table [t] as a csv file*)
+  | SaveCSV of string
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

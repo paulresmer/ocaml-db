@@ -14,6 +14,7 @@ type command =
   | Quit
   | PrintTbl of string
   | Push
+  | SaveCSV of string
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -44,6 +45,7 @@ let parse s =
         | "QUIT" -> Quit
         | "PRINT" -> PrintTbl (String.concat " " t)
         | "PUSH" -> Push
+        | "SAVECSV" -> SaveCSV (String.concat " " t)
         | _ -> raise Empty
       end
     | [] -> raise Empty

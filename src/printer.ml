@@ -1,17 +1,19 @@
 open Dbtype
 
 let print_col (col : column) =
-  print_endline col.name;
+  print_endline ("Column " ^ col.name ^ " : " ^ type_to_string col.col_type);
+  print_endline "********";
   let rec print_vals = function
     | [] -> ()
     | h :: t ->
-        print_endline (to_string h);
+        print_endline (">> " ^ to_string h);
+        print_endline "----------";
         print_vals t
   in
   print_vals col.values
 
 let print_table (table : table) =
-  print_endline table.title;
+  print_endline ("TABLE " ^ table.title);
   let rec print_cols = function
     | [] -> ()
     | h :: t ->

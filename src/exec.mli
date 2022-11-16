@@ -43,3 +43,6 @@ val print_table : string -> unit
 
 (*[push] pushes the current database to a remote URL*)
 val push : unit -> unit
+
+(*[save_csv t] saves table [t] as a csv*)
+val save_csv : string -> unit

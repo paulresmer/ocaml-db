@@ -5,6 +5,7 @@ open Dbtype
 open Stringify
 open Printer
 open Cloud
+open Csv_write
 
 let current_file = ref "db"
 let current_database = ref (read_file !current_file)
@@ -23,7 +24,9 @@ let help () =
      DROP t: Drop table t from the db.\n\
      COUNT t: Display number of rows in table t.\n\
      ADD col TYPE to t: Add a new column col of type T YPE to table t\n\
-     INSERT x1;...;xn INTO t: Add a new row to table t\n\n"
+     INSERT x1;...;xn INTO t: Add a new row to table t\n\
+     PUSH: Push current database to a remote URL as JSON\n\
+     SAVECSV t: Export table [t] as a .csv file\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -111,3 +114,8 @@ let print_table (name : string) =
 let push () =
   save_to_cloud !current_database;
   print_function "Pushed..." [ ANSITerminal.blue ]
+
+let save_csv (name : string) =
+  let tbl = find_table name !current_database in
+  save_csv tbl;
+  print_function ("Saved: ~/Users/" ^ name ^ ".csv") [ ANSITerminal.blue ]
