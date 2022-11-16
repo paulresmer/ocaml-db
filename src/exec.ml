@@ -76,7 +76,7 @@ let count_tbl (name : string) =
   print_function ("COUNT:" ^ string_of_int sz) [ ANSITerminal.cyan ]
 
 let insert_into (vals : string list) =
-  if List.length vals <> 4 then raise Malformed
+  if List.length vals <> 3 then raise Malformed
   else if List.nth vals 1 |> String.capitalize_ascii <> "INTO" then
     raise Malformed
   else
@@ -207,3 +207,9 @@ let min (name : string) =
           print_function
             ("Min of " ^ name ^ " :" ^ string_of_float (min c))
             [ ANSITerminal.blue ]
+
+let pull (name : string) =
+  let db = download name in
+  current_database := db;
+  save !current_database "db.json";
+  print_function "Pulled from remote and updated db.json" [ ANSITerminal.blue ]

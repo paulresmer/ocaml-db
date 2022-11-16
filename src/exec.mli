@@ -58,3 +58,7 @@ val max : string -> unit
 
 (*[min t.c] prints the min of column c in table t*)
 val min : string -> unit
+
+(*[pull id] sets the current database to be the database with id [id] on the
+  cloud*)
+val pull : string -> unit

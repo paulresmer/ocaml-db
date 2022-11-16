@@ -69,6 +69,9 @@ let rec main_repl () =
         | Min t ->
             min t;
             main_repl ()
+        | Pull t ->
+            pull t;
+            main_repl ()
       with
       | ColumnValueMismatch ->
           print_function "Not enough values provided." [ ANSITerminal.red ]
@@ -80,7 +83,7 @@ let rec main_repl () =
           print_function "Invalid input. Enter HELP." [ ANSITerminal.red ]
             main_repl ()
       | Empty ->
-          print_function "Invalid input. Enter HELP." [ ANSITerminal.red ]
+          print_function "Empty input. Enter HELP." [ ANSITerminal.red ]
             main_repl ()
       | InvalidAdd ->
           print_function "Invalid add." [ ANSITerminal.red ] main_repl ()
@@ -96,6 +99,15 @@ let rec main_repl () =
             ()
       | InvalidColumn ->
           print_function "Column does not exist." [ ANSITerminal.red ] main_repl
+            ()
+      | PrimaryColumnAlreadyExists ->
+          print_function "Table already has a primary key." [ ANSITerminal.red ]
+            main_repl ()
+      | PrimaryKeyAlreadyExists ->
+          print_function "A primary key with that value already exists"
+            [ ANSITerminal.red ] main_repl ()
+      | Yojson.Basic.Util.Type_error _ ->
+          print_function "Not a valid remote id." [ ANSITerminal.red ] main_repl
             ())
 
 (*run REPL loop*)

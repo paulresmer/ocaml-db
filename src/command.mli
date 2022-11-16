@@ -51,6 +51,8 @@ type command =
   | Max of string
   (*The [Min t.c] command returns min max of column [c] in table [t]*)
   | Min of string
+  (*The [Pull id] command downloads the database with id [id] from the cloud*)
+  | Pull of string
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

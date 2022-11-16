@@ -7,7 +7,9 @@ exception InvalidInsert
 exception InvalidColType
 exception ColumnValueMismatch
 exception InvalidColumn
+exception PrimaryColumnAlreadyExists
 exception InvalidNumericColumn
+exception PrimaryKeyAlreadyExists
 
 let add_to_col (value : value) (column : column) =
   let new_vals =
@@ -16,7 +18,7 @@ let add_to_col (value : value) (column : column) =
     | VFloat f, TFloat -> VFloat f :: column.values
     | VString s, TString -> VString s :: column.values
     | VBool b, TBool -> VBool b :: column.values
-    | VPrim i, TPrim -> (
+    | VInt i, TPrim -> (
         let int_lst =
           List.map
             (fun elt ->
@@ -28,9 +30,7 @@ let add_to_col (value : value) (column : column) =
         in
         match List.find_opt (fun elt -> elt = i) int_lst with
         | None -> VPrim i :: column.values
-        | Some _ ->
-            print_endline "keyexists";
-            raise InvalidAdd)
+        | Some _ -> raise PrimaryKeyAlreadyExists)
     | _, _ -> raise InvalidAdd
   in
   { column with values = new_vals }
@@ -123,6 +123,14 @@ let update_tbl (table : table) (db : db) =
   let removed = List.filter (fun elt -> elt.title <> table.title) db in
   table :: removed
 
+let check_if_primary_exists (table : table) =
+  let rec iterate (cols : column list) =
+    match cols with
+    | [] -> false
+    | h :: t -> if h.col_type = TPrim then true else iterate t
+  in
+  iterate table.cols
+
 let init_col (name : string) (c_type : string) (table : table) =
   let col_type =
     match String.capitalize_ascii c_type with
@@ -130,7 +138,9 @@ let init_col (name : string) (c_type : string) (table : table) =
     | "FLOAT" -> TFloat
     | "BOOL" -> TBool
     | "STRING" -> TString
-    | "PRIM" -> TPrim
+    | "PRIM" ->
+        if check_if_primary_exists table then raise PrimaryColumnAlreadyExists
+        else TPrim
     | _ -> raise InvalidColType
   in
 

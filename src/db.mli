@@ -7,6 +7,8 @@ exception InvalidColType
 exception ColumnValueMismatch
 exception InvalidColumn
 exception InvalidNumericColumn
+exception PrimaryColumnAlreadyExists
+exception PrimaryKeyAlreadyExists
 
 (*[insert_row v_l t] is the table [t] with a new row of values [v_l] appended to
   it.*)

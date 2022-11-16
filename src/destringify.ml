@@ -58,7 +58,10 @@ let col_map_helper col =
         else
           List.map
             (fun elt ->
-              elt |> to_string |> int_of_string |> fun elt -> VPrim elt)
+              elt |> to_string
+              |> Str.(global_replace (regexp "#") "")
+              |> int_of_string
+              |> fun elt -> VPrim elt)
             values
       in
       { col_type = TPrim; values = clean; name }
@@ -75,3 +78,10 @@ let read_file (name : string) : db =
   else
     let tables = Yojson.Basic.from_file path |> member "tables" |> to_list in
     List.map table_map_helper tables
+
+let parse_string (json : string) : db =
+  let tables =
+    Yojson.Basic.from_string json
+    |> member "record" |> member "tables" |> to_list
+  in
+  List.map table_map_helper tables

@@ -19,6 +19,7 @@ type command =
   | Mean of string
   | Max of string
   | Min of string
+  | Pull of string
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -54,6 +55,7 @@ let parse s =
         | "MEAN" -> Mean (String.concat " " t)
         | "MAX" -> Max (String.concat " " t)
         | "MIN" -> Min (String.concat " " t)
+        | "PULL" -> Pull (String.concat " " t)
         | _ -> raise Empty
       end
     | [] -> raise Empty

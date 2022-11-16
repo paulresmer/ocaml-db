@@ -2,6 +2,7 @@ open Lwt
 open Cohttp
 open Cohttp_lwt_unix
 open Stringify
+open Destringify
 
 let key = "$2b$10$21oSsbY8XbKpuJ3v3KI87.S16wOOsGJVEkTqQUE9IaxYuHgTCD9lq"
 
@@ -35,5 +36,17 @@ let save_to_cloud db =
     print_function url [ ANSITerminal.red ];
     print_endline ""
   in
+  Lwt_main.run request
 
+let download id =
+  let headers = Header.init () in
+  let content_type = Header.add headers "Content-Type" "Application/JSON" in
+  let auth_key = Header.add content_type "X-Master-Key" key in
+  let request =
+    Client.get
+      (Uri.of_string ("https://api.jsonbin.io/v3/b/" ^ id))
+      ~headers:auth_key
+    >>= fun (_, body) ->
+    body |> Cohttp_lwt.Body.to_string >|= fun body -> parse_string body
+  in
   Lwt_main.run request
