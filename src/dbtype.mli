@@ -6,6 +6,7 @@ type value =
   | VFloat of float
   | VBool of bool
   | VNull
+  | VPrim of int
 
 (*A value of type [col_type] represents the types of value a column can have*)
 type col_type =
@@ -13,6 +14,7 @@ type col_type =
   | TString
   | TFloat
   | TBool
+  | TPrim
 
 (* A value of type [column] represents a column as a record with three fields:
    1. the name of the column 2. the list of values of the column 3. the type of

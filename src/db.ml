@@ -16,6 +16,21 @@ let add_to_col (value : value) (column : column) =
     | VFloat f, TFloat -> VFloat f :: column.values
     | VString s, TString -> VString s :: column.values
     | VBool b, TBool -> VBool b :: column.values
+    | VPrim i, TPrim -> (
+        let int_lst =
+          List.map
+            (fun elt ->
+              match elt with
+              | VPrim i -> i
+              | VNull -> 0
+              | _ -> raise InvalidAdd)
+            column.values
+        in
+        match List.find_opt (fun elt -> elt = i) int_lst with
+        | None -> VPrim i :: column.values
+        | Some _ ->
+            print_endline "keyexists";
+            raise InvalidAdd)
     | _, _ -> raise InvalidAdd
   in
   { column with values = new_vals }
@@ -39,6 +54,9 @@ let rec primitive_to_values (primitives : string list) (columns : column list)
       | TString ->
           primitive_to_values p_tail c_tail (from_string p_head :: values)
       | TInt ->
+          let v = from_int (int_of_string p_head) in
+          primitive_to_values p_tail c_tail (v :: values)
+      | TPrim ->
           let v = from_int (int_of_string p_head) in
           primitive_to_values p_tail c_tail (v :: values))
   | [], _ -> raise ColumnValueMismatch
@@ -112,6 +130,7 @@ let init_col (name : string) (c_type : string) (table : table) =
     | "FLOAT" -> TFloat
     | "BOOL" -> TBool
     | "STRING" -> TString
+    | "PRIM" -> TPrim
     | _ -> raise InvalidColType
   in
 

@@ -51,6 +51,17 @@ let col_map_helper col =
             values;
         name;
       }
+  | "Primary" ->
+      let clean =
+        if Yojson.Basic.Util.to_string (List.hd values) = "NULL" then
+          List.init (List.length values) (fun i -> VPrim (i + 1))
+        else
+          List.map
+            (fun elt ->
+              elt |> to_string |> int_of_string |> fun elt -> VPrim elt)
+            values
+      in
+      { col_type = TPrim; values = clean; name }
   | _ -> raise InvalidDB
 
 let table_map_helper tbl =
