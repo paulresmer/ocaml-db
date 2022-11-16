@@ -21,6 +21,7 @@ type command =
   | Max of string
   | Min of string
   | Var of string
+  | StdDev of string
   | Pull of string
   | FindPrim of string list
 
@@ -62,6 +63,7 @@ let parse s =
         | "FINDPRIM" -> FindPrim t
         | "MEDIAN" -> Median (String.concat " " t)
         | "VAR" -> Var (String.concat " " t)
+        | "DEV" -> StdDev (String.concat " " t)
         | _ -> raise Empty
       end
     | [] -> raise Empty

@@ -81,6 +81,9 @@ let rec main_repl () =
         | Var t ->
             find_variance t;
             main_repl ()
+        | StdDev t ->
+            find_dev t;
+            main_repl ()
       with
       | Failure _ ->
           print_function "Invalid argument." [ ANSITerminal.red ] main_repl ()

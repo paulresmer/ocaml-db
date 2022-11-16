@@ -269,3 +269,21 @@ let find_variance (name : string) =
           print_function
             ("Variance of " ^ name ^ " :" ^ string_of_float (variance c))
             [ ANSITerminal.blue ]
+
+let find_dev (name : string) =
+  if not (String.contains name '.') then raise Malformed
+  else
+    let lst = String.split_on_char '.' name in
+    if List.length lst <> 2 then raise Malformed
+    else
+      let tbl_name = List.hd lst in
+      let tbl = find_table tbl_name !current_database in
+      let col_name = List.hd (List.rev lst) in
+      let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+      match col with
+      | None -> raise InvalidColumn
+      | Some c ->
+          print_function
+            ("Standard Deviation of " ^ name ^ " :"
+            ^ string_of_float (std_dev c))
+            [ ANSITerminal.blue ]

@@ -144,3 +144,7 @@ let variance (c : column) =
     | h :: t -> sum t mean (acc +. ((h -. mean) *. (h -. mean)))
   in
   sum values mean 0. /. (float_of_int (List.length values) -. 1.)
+
+let std_dev (c : column) =
+  let var = variance c in
+  sqrt var
