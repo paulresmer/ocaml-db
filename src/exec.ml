@@ -7,6 +7,9 @@ open Printer
 open Cloud
 open Stats
 open Csv_write
+open Csv_read
+
+exception TableExists
 
 let current_file = ref "db"
 let current_database = ref (read_file !current_file)
@@ -26,7 +29,8 @@ let help () =
      >> DROP t: Drop table t from the db.\n\
      >> COUNT t: Display number of rows in table t.\n\
      >> ADD col TYPE to t: Add a new column col of type T YPE to table t\n\
-     >> INSERT x1;...;xn INTO t: Add a new row to table t\n\n\
+     >> INSERT x1;...;xn INTO t: Add a new row to table t\n\
+     >> LOADCSV t.csv: Load a csv file t into a table t_csv\n\n\
      Cloud Version Control: \n\
      >> PUSH: Push current database to a remote URL as JSON\n\
      >> PULL id: Set current database as the database with aa given remote id\n\n\
@@ -287,3 +291,22 @@ let find_dev (name : string) =
             ("Standard Deviation of " ^ name ^ " :"
             ^ string_of_float (std_dev c))
             [ ANSITerminal.blue ]
+
+let load_csv (vals : string list) =
+  (*LOADCSV file*)
+  if List.length vals <> 1 then raise Malformed
+  else
+    let fname = List.hd vals in
+    if
+      table_exists
+        Str.(global_replace (regexp {|\.|}) "_" fname)
+        !current_database
+    then raise TableExists
+    else
+      let table = load fname in
+      let new_db = table :: !current_database in
+      current_database := new_db;
+      save new_db (!current_file ^ ".json");
+      print_function
+        ("Loaded table " ^ Str.(global_replace (regexp {|\.|}) "_" fname))
+        [ ANSITerminal.blue ]

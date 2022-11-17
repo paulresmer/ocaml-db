@@ -62,6 +62,9 @@ type command =
   (*The [FindPrim lst] command finds the row with Primary Key specified in lst
     in table specified in lst*)
   | FindPrim of string list
+  (*The [LoadCSV f INTO t] command loads the contents of csv file [f] into table
+    [t]*)
+  | LoadCSV of string list
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a

@@ -61,3 +61,7 @@ val init_col : string -> string -> table -> table
 
 (*[find_prim id table] returns the row with id [id] in table [table]*)
 val find_prim : int -> table -> string list
+
+(*[table_exists name db] is true if a table with title [name] exists in database
+  [db], false otherwise*)
+val table_exists : string -> db -> bool

@@ -24,6 +24,7 @@ type command =
   | StdDev of string
   | Pull of string
   | FindPrim of string list
+  | LoadCSV of string list
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -64,6 +65,7 @@ let parse s =
         | "MEDIAN" -> Median (String.concat " " t)
         | "VAR" -> Var (String.concat " " t)
         | "DEV" -> StdDev (String.concat " " t)
+        | "LOADCSV" -> LoadCSV t
         | _ -> raise Empty
       end
     | [] -> raise Empty

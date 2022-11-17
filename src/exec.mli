@@ -1,5 +1,7 @@
 open Dbtype
 
+exception TableExists
+
 (*[current_database] is a reference to the database in scope *)
 val current_database : db ref
 
@@ -75,3 +77,6 @@ val find_variance : string -> unit
 
 (*[find_dev t.c] prints the variance of column c in table t*)
 val find_dev : string -> unit
+
+(*[load_csv vals] loads a csv into a table*)
+val load_csv : string list -> unit

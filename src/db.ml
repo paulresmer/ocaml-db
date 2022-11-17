@@ -200,3 +200,8 @@ let find_prim (key : int) (table : table) =
           find_all t (str :: acc)
     in
     find_all table.cols []
+
+let rec table_exists (name : string) (db : db) : bool =
+  match db with
+  | [] -> false
+  | h :: t -> if h.title = name then true else table_exists name t

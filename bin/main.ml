@@ -2,6 +2,7 @@ open SQLDB.Command
 open SQLDB.Destringify
 open SQLDB.Db
 open SQLDB.Exec
+open SQLDB.Csv_read
 
 (** [print_function msg color func] prints string [msg] in color [color] and
     then calls function [func] after the printing is complete *)
@@ -84,9 +85,15 @@ let rec main_repl () =
         | StdDev t ->
             find_dev t;
             main_repl ()
+        | LoadCSV t ->
+            load_csv t;
+            main_repl ()
       with
-      | Failure _ ->
-          print_function "Invalid argument." [ ANSITerminal.red ] main_repl ()
+      | Sys_error err -> print_function err [ ANSITerminal.red ] main_repl ()
+      | Failure err ->
+          print_function
+            ("Invalid argument." ^ err)
+            [ ANSITerminal.red ] main_repl ()
       | Invalid_argument _ ->
           print_function "Could not find a valid row with that id."
             [ ANSITerminal.red ] main_repl ()
@@ -131,7 +138,13 @@ let rec main_repl () =
             [ ANSITerminal.red ] main_repl ()
       | Yojson.Basic.Util.Type_error _ ->
           print_function "Not a valid remote id." [ ANSITerminal.red ] main_repl
-            ())
+            ()
+      | TableExists ->
+          print_function "A table with that name already exists."
+            [ ANSITerminal.red ] main_repl ()
+      | MalformedCSV ->
+          print_function "Malformed CSV paassed in" [ ANSITerminal.red ]
+            main_repl ())
 
 (*run REPL loop*)
 let () =
