@@ -1,6 +1,7 @@
 open Dbtype
 
 exception MalformedCSV
+exception HeterogeneousCols
 
 type csv = string list list
 
@@ -26,7 +27,7 @@ let infer_type (csv_column : string list) : col_type =
       match csv_columns with
       | [] -> acc
       | h :: t ->
-          if infer_elt_type h <> acc then raise MalformedCSV
+          if infer_elt_type h <> acc then raise HeterogeneousCols
           else assert_homogeneity t acc
     in
     assert_homogeneity (List.tl csv_column) first

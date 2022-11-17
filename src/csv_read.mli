@@ -1,6 +1,7 @@
 open Dbtype
 
 exception MalformedCSV
+exception HeterogeneousCols
 
 (*Represent a csv as a nested list*)
 type csv = string list list

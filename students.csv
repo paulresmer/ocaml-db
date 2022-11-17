@@ -1,6 +1,6 @@
 gpa,name,major,dorm,id
 3.9,Nirbhay,CS,CKB,#10
 3.,Nirbhay,CS,Dickson,#1
-0.,Saumya,Physics,Becker,#2
-0.,Dickson,Physics,Raghav,#3
-0.,Nirbhay,CS,Dickson,#4
+3.,Saumya,Physics,Becker,#2
+3.,Dickson,Physics,Raghav,#3
+1.,Nirbhay,CS,Dickson,#4

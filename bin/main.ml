@@ -142,9 +142,13 @@ let rec main_repl () =
       | TableExists ->
           print_function "A table with that name already exists."
             [ ANSITerminal.red ] main_repl ()
-      | MalformedCSV ->
-          print_function "Malformed CSV paassed in" [ ANSITerminal.red ]
-            main_repl ())
+      (* | MalformedCSV -> print_function "Malformed CSV passed in" [
+         ANSITerminal.red ] main_repl () *)
+      | HeterogeneousCols ->
+          print_function
+            "The columns of the csv must be discernibly homogenous. Ambiguity \
+             detected in contents."
+            [ ANSITerminal.red ] main_repl ())
 
 (*run REPL loop*)
 let () =
