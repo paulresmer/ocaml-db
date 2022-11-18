@@ -293,7 +293,6 @@ let find_dev (name : string) =
             [ ANSITerminal.blue ]
 
 let load_csv (vals : string list) =
-  (*LOADCSV file*)
   if List.length vals <> 1 then raise Malformed
   else
     let fname = List.hd vals in
