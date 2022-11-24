@@ -115,10 +115,11 @@ let destringify_tests =
   ]
 
 (*test Db*)
-(*let insert_row_test (name : string) (expected : Dbtype.table) (input_row :
-  Dbtype.value list) (input_table : Dbtype.table) = name >:: fun _ ->
-  assert_equal expected (Db.insert_row input_row input_table)
-  ~printer:Stringify.stringify_table*)
+(* let insert_row_test (name : string) (expected : Dbtype.table) (input_row :
+   Dbtype.value list) (input_table : Dbtype.table) = name >:: fun _ ->
+   assert_equal expected (Db.insert_row input_row input_table)
+   ~printer:Stringify.stringify_table *)
+
 let col_name_test (name : string) (expected : string) (input : Dbtype.column) =
   name >:: fun _ ->
   assert_equal expected (Db.col_name input) ~printer:String.capitalize_ascii
@@ -177,10 +178,10 @@ let db_tests =
   [
     (* insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
        insert_row_test "insert empty row to table" tbl2 [] tbl2; insert_row_test
-       "insert row of length 1 to empty table" tbl4 [ v1 ] tbl1; insert_row_test
-       "insert row of length 2 to empty table" tbl5 [ v1; v2 ] tbl1;
-       insert_row_test "insert row of length 2 to table" tbl7 [ v2; v4 ]
-       tbl6; *)
+       "insert row of length 1 to empty table" _tbl4 [ v1 ] tbl1;
+       insert_row_test "insert row of length 2 to empty table" _tbl5 [ v1; v2 ]
+       tbl1; insert_row_test "insert row of length 2 to table" _tbl7 [ v2; v4 ]
+       _tbl6; *)
     col_name_test "name of col1 is \"col1\"" "col1" col1;
     col_name_test "name of col7 is \"\"" "" col7;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;

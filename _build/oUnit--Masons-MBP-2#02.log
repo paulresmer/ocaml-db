@@ -1,0 +1,39 @@
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :1:sample col with one value.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :1:sample col with one value is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :1:sample col with one value.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :7:sample database with one table.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :7:sample database with one table is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :7:sample database with one table.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :9:destringify db1.json.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :9:destringify db1.json is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :9:destringify db1.json.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :12:name of col1 is "col1".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :12:name of col1 is "col1" is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :12:name of col1 is "col1".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :13:name of col7 is "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :13:name of col7 is "" is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :13:name of col7 is "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :16:get col1 from tbl3.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :16:get col1 from tbl3 is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :16:get col1 from tbl3.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :18:rename col1 with name "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :18:rename col1 with name "" is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :18:rename col1 with name "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :20:initialize empty table in db1.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :20:initialize empty table in db1 is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :20:initialize empty table in db1.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :22:columns of tbl2 are [col1].
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :22:columns of tbl2 are [col1] is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :22:columns of tbl2 are [col1].
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :24:title of tbl1 is "tbl1".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :24:title of tbl1 is "tbl1" is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :24:title of tbl1 is "tbl1".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :26:retitle tbl1 with title "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :26:retitle tbl1 with title "" is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :26:retitle tbl1 with title "".
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :28:db3 without tbl2 is db2.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :28:db3 without tbl2 is db2 is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :28:db3 without tbl2 is db2.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Start test :30:tbl2 in db3 has 1 column.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: Test :30:tbl2 in db3 has 1 column is successful.
+2022-11-24T16:50:08+00:00 Masons-MBP-2#02 I: End test :30:tbl2 in db3 has 1 column.
