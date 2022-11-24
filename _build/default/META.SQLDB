@@ -1,0 +1,6 @@
+description = ""
+requires = "ANSITerminal cohttp cohttp-lwt-unix csv lwt str yojson"
+archive(byte) = "SQLDB.cma"
+archive(native) = "SQLDB.cmxa"
+plugin(byte) = "SQLDB.cma"
+plugin(native) = "SQLDB.cmxs"

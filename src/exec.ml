@@ -92,17 +92,24 @@ let count_tbl (name : string) =
   print_function ("COUNT:" ^ string_of_int sz) [ ANSITerminal.cyan ]
 
 let insert_into (vals : string list) =
-  if List.length vals <> 3 then raise Malformed
-  else if List.nth vals 1 |> String.capitalize_ascii <> "INTO" then
+  if List.length vals < 3 then raise Malformed
+  else if List.nth (List.rev vals) 1 |> String.capitalize_ascii <> "INTO" then
     raise Malformed
   else
     let tbl_name = List.hd (List.rev vals) in
     match cols_of_table tbl_name !current_database with
     | cols ->
         let primitive_lst =
-          List.hd vals |> String.split_on_char ';'
-          |> List.filter (fun elt -> elt <> "")
+          vals
+          |> List.filter (fun e ->
+                 String.capitalize_ascii e <> "INTO" && e <> tbl_name)
+          |> List.map (fun s ->
+                 String.fold_left
+                   (fun acc c -> if c = ';' then acc else acc ^ Char.escaped c)
+                   "" s)
         in
+
+        List.iter (fun s -> print_endline s) primitive_lst;
         let vals = primitive_to_values primitive_lst cols [] in
         let tbl = find_table tbl_name !current_database in
         let new_tbl = insert_row vals tbl in

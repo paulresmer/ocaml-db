@@ -1,0 +1,122 @@
+# dune exec bin/main.exe
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/andrewchoi/3110-final-proj
+# Auto-detected concurrency: 8
+$ /Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlc.opt -config > /var/folders/00/840stc_s23d04vlk0gqhrj840000gn/T/dune_fc3b03_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/Users/andrewchoi/.opam/cs3110-2022fa/lib/toplevel"
+#  ; ocaml_bin = External "/Users/andrewchoi/.opam/cs3110-2022fa/bin"
+#  ; ocaml = Ok External "/Users/andrewchoi/.opam/cs3110-2022fa/bin/ocaml"
+#  ; ocamlc = External "/Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/andrewchoi/.opam/cs3110-2022fa/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/Users/andrewchoi/3110-final-proj"
+#        ; "INSIDE_DUNE" : "/Users/andrewchoi/3110-final-proj/_build/default"
+#        ; "MANPATH" :
+#            "/Users/andrewchoi/3110-final-proj/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/andrewchoi/3110-final-proj/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/andrewchoi/3110-final-proj/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/andrewchoi/3110-final-proj/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/andrewchoi/.opam/cs3110-2022fa/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.14.0"
+#      ; standard_library_default =
+#          "/Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml"
+#      ; standard_library = "/Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "cc"
+#      ; ocamlc_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
+#      ; bytecomp_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "cc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-pthread"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "arm64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "aarch64-apple-darwin20.6.0"
+#      ; target = "aarch64-apple-darwin20.6.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X031"
+#      ; cmi_magic_number = "Caml1999I031"
+#      ; cmo_magic_number = "Caml1999O031"
+#      ; cma_magic_number = "Caml1999A031"
+#      ; cmx_magic_number = "Caml1999Y031"
+#      ; cmxa_magic_number = "Caml1999Z031"
+#      ; ast_impl_magic_number = "Caml1999M031"
+#      ; ast_intf_magic_number = "Caml1999N031"
+#      ; cmxs_magic_number = "Caml1999D031"
+#      ; cmt_magic_number = "Caml1999T031"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamldep.opt -modules -impl src/exec.ml) > _build/default/src/.SQLDB.objs/exec.ml.d
+$ (cd _build/default && /Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I src/.SQLDB.objs/byte -I src/.SQLDB.objs/native -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ANSITerminal -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/angstrom -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/astring -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/base/caml -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/base64 -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/bigstringaf -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp-lwt -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp-lwt-unix -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit-lwt -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit-lwt-unix -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/csv -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/domain-name -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/fmt -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr-sexp -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr/unix -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/logs -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/lwt -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/lwt/unix -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/macaddr -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/magic-mime -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml/threads -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocplib-endian -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocplib-endian/bigstring -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/parsexp -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ppx_sexp_conv/runtime-lib -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/re -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/seq -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/sexplib -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/sexplib0 -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/stringext -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri-sexp -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri/services -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/yojson -intf-suffix .ml -no-alias-deps -opaque -open SQLDB -o src/.SQLDB.objs/native/sQLDB__Exec.cmx -c -impl src/exec.ml)
+$ (cd _build/default && /Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o src/SQLDB.cmxa src/.SQLDB.objs/native/sQLDB.cmx src/.SQLDB.objs/native/sQLDB__Dbtype.cmx src/.SQLDB.objs/native/sQLDB__Stringify.cmx src/.SQLDB.objs/native/sQLDB__Db.cmx src/.SQLDB.objs/native/sQLDB__Stats.cmx src/.SQLDB.objs/native/sQLDB__Printer.cmx src/.SQLDB.objs/native/sQLDB__Destringify.cmx src/.SQLDB.objs/native/sQLDB__Cloud.cmx src/.SQLDB.objs/native/sQLDB__Command.cmx src/.SQLDB.objs/native/sQLDB__Csv_read.cmx src/.SQLDB.objs/native/sQLDB__Csv_write.cmx src/.SQLDB.objs/native/sQLDB__Exec.cmx)
+$ (cd _build/default && /Users/andrewchoi/.opam/cs3110-2022fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o bin/main.exe /Users/andrewchoi/.opam/cs3110-2022fa/lib/yojson/yojson.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml/unix.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml /Users/andrewchoi/.opam/cs3110-2022fa/lib/ANSITerminal/ANSITerminal.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ANSITerminal /Users/andrewchoi/.opam/cs3110-2022fa/lib/re/re.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/stringext/stringext.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/bigstringaf/bigstringaf.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/bigstringaf /Users/andrewchoi/.opam/cs3110-2022fa/lib/angstrom/angstrom.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri/uri.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/sexplib0/sexplib0.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri-sexp/uri_sexp.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/base64/base64.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp/cohttp.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/lwt/lwt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/fmt/fmt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/logs/logs.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/logs/logs_lwt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml/bigarray.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml /Users/andrewchoi/.opam/cs3110-2022fa/lib/base/caml/caml.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/parsexp/parsexp.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/sexplib/sexplib.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/macaddr/macaddr.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/domain-name/domain_name.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr/ipaddr.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr-sexp/ipaddr_sexp.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/astring/astring.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit/conduit.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit-lwt/conduit_lwt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/magic-mime/magic_mime_library.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocplib-endian/ocplib_endian.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml/threads/threads.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml /Users/andrewchoi/.opam/cs3110-2022fa/lib/lwt/unix/lwt_unix.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/lwt/unix /Users/andrewchoi/.opam/cs3110-2022fa/lib/uri/services/uri_services.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ipaddr/unix/ipaddr_unix.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/conduit-lwt-unix/conduit_lwt_unix.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp-lwt/cohttp_lwt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/logs/logs_fmt.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/cohttp-lwt-unix/cohttp_lwt_unix.cmxa /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml/str.cmxa -I /Users/andrewchoi/.opam/cs3110-2022fa/lib/ocaml /Users/andrewchoi/.opam/cs3110-2022fa/lib/csv/csv.cmxa src/SQLDB.cmxa bin/.main.eobjs/native/dune__exe__Main.cmx)
