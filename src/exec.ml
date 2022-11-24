@@ -108,8 +108,6 @@ let insert_into (vals : string list) =
                    (fun acc c -> if c = ';' then acc else acc ^ Char.escaped c)
                    "" s)
         in
-
-        List.iter (fun s -> print_endline s) primitive_lst;
         let vals = primitive_to_values primitive_lst cols [] in
         let tbl = find_table tbl_name !current_database in
         let new_tbl = insert_row vals tbl in
