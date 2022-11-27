@@ -35,15 +35,22 @@ let check_for_empty elem = elem <> ""
 let list_phrases str =
   str |> String.split_on_char ' ' |> List.filter check_for_empty
 
+(* [capitalize s] capitalizes all letters found in [s]. Example: capitalize
+   "uppercase" -> "UPPERCASE" *)
+let capitalize s =
+  String.fold_left
+    (fun acc c -> acc ^ Char.(c |> uppercase_ascii |> escaped))
+    "" s
+
 (** [parse str] is a value of type [object_phrase] that is mapped from the input
     string [str] *)
 let parse s =
   let sanitised_str = s |> String.trim in
-  if sanitised_str = "HELP" then Help
+  if capitalize sanitised_str = "HELP" then Help
   else
     match list_phrases sanitised_str with
     | h :: t -> begin
-        match h with
+        match capitalize h with
         | "CREATE" -> TableInit (String.concat " " t)
         | "COLS" -> DescribeCols (String.concat " " t)
         | "LOAD" -> LoadDB (String.concat " " t)
