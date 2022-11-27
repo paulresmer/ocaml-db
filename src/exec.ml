@@ -18,6 +18,13 @@ let print_function msg color =
   let _ = msg |> ANSITerminal.print_string color in
   ()
 
+(* [capitalize s] capitalizes all letters found in [s]. Example: capitalize
+   "uppercase" -> "UPPERCASE" *)
+let capitalize s =
+  String.fold_left
+    (fun acc c -> acc ^ Char.(c |> uppercase_ascii |> escaped))
+    "" s
+
 let help () =
   print_function
     "Available commands\n\n\
@@ -62,7 +69,7 @@ let describe_cols (name : string) =
   let col_types = List.map (fun elt -> type_to_string elt.col_type) cols in
   let col_annotations =
     List.map2
-      (fun name col_type -> name ^ ":" ^ String.uppercase_ascii col_type)
+      (fun name col_type -> name ^ ":" ^ capitalize col_type)
       col_names col_types
   in
   let col_str = String.concat "\n" col_annotations in
@@ -91,13 +98,6 @@ let count_tbl (name : string) =
   let sz = count_tbl name !current_database in
   print_function ("COUNT:" ^ string_of_int sz) [ ANSITerminal.cyan ]
 
-(* [capitalize s] capitalizes all letters found in [s]. Example: capitalize
-   "uppercase" -> "UPPERCASE" *)
-let capitalize s =
-  String.fold_left
-    (fun acc c -> acc ^ Char.(c |> uppercase_ascii |> escaped))
-    "" s
-
 let insert_into (vals : string list) =
   if List.length vals < 3 then raise Malformed
   else if List.nth (List.rev vals) 1 |> capitalize <> "INTO" then
@@ -123,7 +123,7 @@ let insert_into (vals : string list) =
         print_function "Added value to column" [ ANSITerminal.cyan ]
 
 let add_col (vals : string list) =
-  if List.nth vals 2 |> String.uppercase_ascii <> "TO" then raise Malformed
+  if List.nth vals 2 |> capitalize <> "TO" then raise Malformed
   else
     let tbl_name = List.hd (List.rev vals) in
     let col_name = List.hd vals in
@@ -243,7 +243,7 @@ let pull (name : string) =
 
 let find_all (vals : string list) =
   if List.length vals <> 3 then raise Malformed
-  else if List.nth vals 1 |> String.uppercase_ascii <> "IN" then raise Malformed
+  else if List.nth vals 1 |> capitalize <> "IN" then raise Malformed
   else
     let tbl_name = List.hd (List.rev vals) in
     let key = int_of_string (List.hd vals) in
