@@ -214,12 +214,20 @@ let type_string_test (name : string) (expected : string)
     (input_db : Dbtype.col_type) =
   name >:: fun _ -> assert_equal expected (Dbtype.type_to_string input_db)
 
+let value_string_test (name : string) (expected : string)
+    (input_val : Dbtype.value) =
+  name >:: fun _ -> assert_equal expected (Dbtype.to_string input_val)
+
 let dbtype_tests =
   [
     type_string_test "Int Column Type" "Int" col2.col_type;
     type_string_test "Int Column Type" "Int" col4.col_type;
     type_string_test "String Column Type" "String" col5.col_type;
     type_string_test "String Column Type" "String" col7.col_type;
+    value_string_test "Int Value Type" "1" v1;
+    value_string_test "Int Value Type" "2" v2;
+    value_string_test "String Value Type" "a" v3;
+    value_string_test "String Value Type" "b" v4;
   ]
 
 let suite =
