@@ -205,17 +205,29 @@ let db_tests =
   ]
 
 (*test Command*)
+
 let command_tests = []
 
 (*test Dbtype*)
-let dbtype_tests = []
+
+let type_string_test (name : string) (expected : string)
+    (input_db : Dbtype.col_type) =
+  name >:: fun _ -> assert_equal expected (Dbtype.type_to_string input_db)
+
+let dbtype_tests =
+  [
+    type_string_test "Int Column Type" "Int" col2.col_type;
+    type_string_test "Int Column Type" "Int" col4.col_type;
+    type_string_test "String Column Type" "String" col5.col_type;
+    type_string_test "String Column Type" "String" col7.col_type;
+  ]
 
 let suite =
   ""
   >::: List.flatten
          [
            stringify_tests @ destringify_tests @ command_tests @ dbtype_tests
-           @ db_tests;
+           @ db_tests @ command_tests;
          ]
 
 let _ = run_test_tt_main suite
