@@ -1,6 +1,0 @@
-description = ""
-requires = "yojson"
-archive(byte) = "SQLDB.cma"
-archive(native) = "SQLDB.cmxa"
-plugin(byte) = "SQLDB.cma"
-plugin(native) = "SQLDB.cmxs"
