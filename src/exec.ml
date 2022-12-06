@@ -91,17 +91,28 @@ let count_tbl (name : string) =
   let sz = count_tbl name !current_database in
   print_function ("COUNT:" ^ string_of_int sz) [ ANSITerminal.cyan ]
 
+(* [capitalize s] capitalizes all letters found in [s]. Example: capitalize
+   "uppercase" -> "UPPERCASE" *)
+let capitalize s =
+  String.fold_left
+    (fun acc c -> acc ^ Char.(c |> uppercase_ascii |> escaped))
+    "" s
+
 let insert_into (vals : string list) =
-  if List.length vals <> 3 then raise Malformed
-  else if List.nth vals 1 |> String.capitalize_ascii <> "INTO" then
+  if List.length vals < 3 then raise Malformed
+  else if List.nth (List.rev vals) 1 |> capitalize <> "INTO" then
     raise Malformed
   else
     let tbl_name = List.hd (List.rev vals) in
     match cols_of_table tbl_name !current_database with
     | cols ->
         let primitive_lst =
-          List.hd vals |> String.split_on_char ';'
-          |> List.filter (fun elt -> elt <> "")
+          vals
+          |> List.filter (fun e -> capitalize e <> "INTO" && e <> tbl_name)
+          |> List.map (fun s ->
+                 String.fold_left
+                   (fun acc c -> if c = ';' then acc else acc ^ Char.escaped c)
+                   "" s)
         in
         let vals = primitive_to_values primitive_lst cols [] in
         let tbl = find_table tbl_name !current_database in
