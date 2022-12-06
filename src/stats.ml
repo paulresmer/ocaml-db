@@ -11,6 +11,12 @@ let val_to_flt = function
   | VNull -> 0.
   | _ -> raise InvalidNumericColumn
 
+let val_to_flt_or_int = function
+  | VFloat i -> i
+  | VInt i -> float_of_int i
+  | VNull -> 0.
+  | _ -> raise InvalidNumericColumn
+
 let map_vals_to_int (vals : value list) = List.map val_to_int vals
 let map_vals_to_flt (vals : value list) = List.map val_to_flt vals
 
@@ -84,16 +90,7 @@ let median (c : column) =
 
 let variance (c : column) =
   let mean = mean c in
-  let values =
-    List.map
-      (fun elt ->
-        match elt with
-        | VInt i -> float_of_int i
-        | VFloat f -> f
-        | VNull -> 0.
-        | _ -> raise InvalidNumericColumn)
-      c.values
-  in
+  let values = List.map val_to_flt_or_int c.values in
   let rec sum (lst : float list) (mean : float) (acc : float) =
     match lst with
     | [] -> acc

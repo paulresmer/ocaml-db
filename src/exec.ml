@@ -141,11 +141,12 @@ let print_table (name : string) =
     else
       let tbl_name = List.hd lst in
       let tbl = find_table tbl_name !current_database in
+      let max_width = max_width tbl.cols 0 in
       let col_name = List.hd (List.rev lst) in
       let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
       match col with
       | None -> raise InvalidColumn
-      | Some c -> print_col c
+      | Some c -> print_col c max_width
 
 let push () =
   save_to_cloud !current_database;
