@@ -48,7 +48,9 @@ let help () =
      numeric.\n\
      >> MIN t.c: Print the min of column c in table c, if column is numeric.\n\n\
      Query: \n\
-     >> FINDPRIM n IN t: Print row in t with primary key n\n"
+     >> FINDPRIM n IN t: Print row in t with primary key n\n\
+     >> FINDWHERE col (=/>/</<=/>=/!=) val IN t: Print all rows in column c in \
+     table t that satisfy the predicate\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -321,3 +323,126 @@ let load_csv (vals : string list) =
       print_function
         ("Loaded table " ^ Str.(global_replace (regexp {|\.|}) "_" fname))
         [ ANSITerminal.blue ]
+
+let filter_col_int col predicate =
+  let values =
+    List.filter
+      (fun elt ->
+        match elt with
+        | VInt i -> predicate i
+        | _ -> failwith "Impossible.")
+      col.values
+  in
+  { name = col.name; col_type = col.col_type; values }
+
+let filter_col_str col predicate =
+  let values =
+    List.filter
+      (fun elt ->
+        match elt with
+        | VString s -> predicate s
+        | _ -> failwith "Impossible.")
+      col.values
+  in
+  { name = col.name; col_type = col.col_type; values }
+
+let filter_col_flt col predicate =
+  let values =
+    List.filter
+      (fun elt ->
+        match elt with
+        | VFloat f -> predicate f
+        | _ -> failwith "Impossible.")
+      col.values
+  in
+  { name = col.name; col_type = col.col_type; values }
+
+let filter_col_bl col predicate =
+  let values =
+    List.filter
+      (fun elt ->
+        match elt with
+        | VBool b -> predicate b
+        | _ -> failwith "Impossible.")
+      col.values
+  in
+  { name = col.name; col_type = col.col_type; values }
+
+let int_helper c value op =
+  let max_width = max_width [ c ] 0 in
+  let predicate elt = op elt (int_of_string value) in
+  let new_col = filter_col_int c predicate in
+  let filter_size = List.length new_col.values in
+  print_endline (string_of_int filter_size ^ " results.");
+  Printer.print_col new_col max_width
+
+let flt_helper c value op =
+  let max_width = max_width [ c ] 0 in
+  let predicate elt = op elt (float_of_string value) in
+  let new_col = filter_col_flt c predicate in
+  let filter_size = List.length new_col.values in
+  print_endline (string_of_int filter_size ^ " results.");
+  Printer.print_col new_col max_width
+
+let string_helper c value op =
+  let max_width = max_width [ c ] 0 in
+  let predicate elt = op elt value in
+  let new_col = filter_col_str c predicate in
+  let filter_size = List.length new_col.values in
+  print_endline (string_of_int filter_size ^ " results.");
+  Printer.print_col new_col max_width
+
+let bool_helper c value op =
+  let max_width = max_width [ c ] 0 in
+  let predicate elt = op elt (bool_of_string value) in
+  let new_col = filter_col_bl c predicate in
+  let filter_size = List.length new_col.values in
+  print_endline (string_of_int filter_size ^ " results.");
+  Printer.print_col new_col max_width
+
+let find_where (vals : string list) =
+  if List.length vals <> 5 then raise Malformed
+  else
+    let tbl_name = List.hd (List.rev vals) in
+    let tbl = find_table tbl_name !current_database in
+    let col_name = List.hd vals in
+    let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+    match col with
+    | None -> raise InvalidColumn
+    | Some c -> (
+        let op = List.nth vals 1 in
+        let value = List.nth vals 2 in
+        match c.col_type with
+        | TInt -> (
+            match op with
+            | "<" -> int_helper c value ( < )
+            | ">" -> int_helper c value ( > )
+            | "=" -> int_helper c value ( = )
+            | "!=" -> int_helper c value ( <> )
+            | "<=" -> int_helper c value ( <= )
+            | ">=" -> int_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TFloat -> (
+            match op with
+            | "<" -> flt_helper c value ( < )
+            | ">" -> flt_helper c value ( > )
+            | "=" -> flt_helper c value ( = )
+            | "!=" -> flt_helper c value ( <> )
+            | "<=" -> flt_helper c value ( <= )
+            | ">=" -> flt_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TString -> (
+            match op with
+            | "<" -> string_helper c value ( < )
+            | ">" -> string_helper c value ( > )
+            | "=" -> string_helper c value ( = )
+            | "!=" -> string_helper c value ( <> )
+            | "<=" -> string_helper c value ( <= )
+            | ">=" -> string_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TBool -> (
+            match op with
+            | "=" -> bool_helper c value ( = )
+            | "!=" -> bool_helper c value ( > )
+            | _ -> raise Malformed)
+        | _ -> raise Malformed)

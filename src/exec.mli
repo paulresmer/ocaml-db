@@ -80,3 +80,6 @@ val find_dev : string -> unit
 
 (*[load_csv vals] loads a csv into a table*)
 val load_csv : string list -> unit
+
+(*[find_where t] runs the find-where command on the parameters specified in t*)
+val find_where : string list -> unit

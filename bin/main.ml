@@ -88,18 +88,24 @@ let rec main_repl () =
         | LoadCSV t ->
             load_csv t;
             main_repl ()
+        | FindWhere t ->
+            find_where t;
+            main_repl ()
       with
       | Sys_error err -> print_function err [ ANSITerminal.red ] main_repl ()
       | Failure err ->
           print_function
             ("Invalid argument." ^ err)
             [ ANSITerminal.red ] main_repl ()
-      | Invalid_argument _ ->
-          print_function "Could not find a valid row with that id."
+      | Invalid_argument x ->
+          print_endline x;
+          print_function
+            "Invalid argument passed in!\n\
+             If you are trying to add values to a column, make sure the types \
+             line up by inspecting the column first."
             [ ANSITerminal.red ] main_repl ()
       | Not_found ->
-          print_function "Could not find a valid row with that id."
-            [ ANSITerminal.red ] main_repl ()
+          print_function "Argument not found!" [ ANSITerminal.red ] main_repl ()
       | InvalidFind ->
           print_function "Could not find a valid row with that id."
             [ ANSITerminal.red ] main_repl ()

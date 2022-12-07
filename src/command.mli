@@ -65,6 +65,9 @@ type command =
   (*The [LoadCSV f INTO t] command loads the contents of csv file [f] into table
     [t]*)
   | LoadCSV of string list
+  (*The [FINDWHERE t] command prints the rows that satisfy the predicate, where
+    these parameters are specified in t*)
+  | FindWhere of string list
 
 (*[parse str] is the command described by the string [str]. If [str] is empty
   (or some variation of empty), [Empty] is raised. If [str] does not represent a
