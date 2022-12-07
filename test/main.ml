@@ -77,6 +77,7 @@ let db2 : Dbtype.db = [ tbl1 ]
 let db3 : Dbtype.db = [ tbl1; tbl2 ]
 let db4 : Dbtype.db = [ tbl2 ]
 let db5 : Dbtype.db = [ tbl1; tbl2; tbl3 ]
+let db6 : Dbtype.db = [ tbl2; tbl1; tbl3 ]
 
 (*****************************************************************)
 (* Test suite *)
@@ -148,13 +149,6 @@ let destringify_tests =
   ]
 
 (*test Db*)
-let insert_row_test (name : string) (expected : Dbtype.table)
-    (input_row : Dbtype.value list) (input_table : Dbtype.table) =
-  name >:: fun _ ->
-  assert_equal expected
-    (Db.insert_row input_row input_table)
-    ~printer:Stringify.stringify_table
-
 let col_name_test (name : string) (expected : string) (input : Dbtype.column) =
   name >:: fun _ ->
   assert_equal expected (Db.col_name input) ~printer:String.capitalize_ascii
@@ -209,14 +203,15 @@ let count_tbl_test (name : string) (expected : int) (input_tbl : string)
   name >:: fun _ ->
   assert_equal expected (Db.count_tbl input_tbl input_db) ~printer:Int.to_string
 
+let update_tbl_test (name : string) (expected : Dbtype.db)
+    (input_tbl : Dbtype.table) (input_db : Dbtype.db) =
+  name >:: fun _ ->
+  assert_equal expected
+    (Db.update_tbl input_tbl input_db)
+    ~printer:Stringify.stringify_db
+
 let db_tests =
   [
-    insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
-    (* insert_row_test "insert empty row to table" tbl2 [] tbl2; insert_row_test
-       "insert row of length 1 to empty table" tbl4 [ v1 ] tbl1; insert_row_test
-       "insert row of length 2 to empty table" tbl5 [ v1; v2 ] tbl1;
-       insert_row_test "insert row of length 2 to table" tbl7 [ v2; v4 ]
-       tbl6; *)
     col_name_test "name of col1 is \"col1\"" "col1" col1;
     col_name_test "name of col7 is \"\"" "" col7;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
@@ -239,6 +234,10 @@ let db_tests =
     count_tbl_test "tbl1 in db2 has 0 columns" 0 "tbl1" db2;
     count_tbl_test "tbl2 in db3 has 1 column" 1 "tbl2" db3;
     count_tbl_test "tbl3 in db5 has 2 columns" 2 "tbl3" db5;
+    update_tbl_test "update db1 to db2" db2 tbl1 db1;
+    update_tbl_test "update db4 to db3" db3 tbl1 db4;
+    update_tbl_test "update db2 to db2" db2 tbl1 db2;
+    update_tbl_test "update db5 to db6" db6 tbl2 db5;
   ]
 
 (*test Command*)
