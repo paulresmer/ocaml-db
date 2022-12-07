@@ -49,8 +49,8 @@ let help () =
      >> MIN t.c: Print the min of column c in table c, if column is numeric.\n\n\
      Query: \n\
      >> FINDPRIM n IN t: Print row in t with primary key n\n\
-     >> FINDWHERE col (=/>/</<=/>=/!=) val IN t: Print all rows in column c in \
-     table t that satisfy the predicate\n"
+     >> FINDWHERE col (=/>/</<=/>=/!=) val IN t: Print the first row in table \
+     t that satisfy the predicate\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -324,81 +324,120 @@ let load_csv (vals : string list) =
         ("Loaded table " ^ Str.(global_replace (regexp {|\.|}) "_" fname))
         [ ANSITerminal.blue ]
 
+let rec find x lst =
+  match lst with
+  | [] -> raise (Failure "Not Found")
+  | h :: t -> if x = h then 0 else 1 + find x t
+
 let filter_col_int col predicate =
+  let removed_indices = ref [] in
   let values =
     List.filter
       (fun elt ->
         match elt with
-        | VInt i -> predicate i
+        | VInt i ->
+            if predicate i then (
+              let removed_index = find (VInt i) col.values in
+              removed_indices := removed_index :: !removed_indices;
+              predicate i)
+            else predicate i
         | _ -> failwith "Impossible.")
       col.values
   in
-  { name = col.name; col_type = col.col_type; values }
+  ({ name = col.name; col_type = col.col_type; values }, removed_indices)
 
 let filter_col_str col predicate =
+  let removed_indices = ref [] in
   let values =
     List.filter
       (fun elt ->
         match elt with
-        | VString s -> predicate s
+        | VString s ->
+            if predicate s then (
+              let removed_index = find (VString s) col.values in
+              removed_indices := removed_index :: !removed_indices;
+              predicate s)
+            else predicate s
         | _ -> failwith "Impossible.")
       col.values
   in
-  { name = col.name; col_type = col.col_type; values }
+  ({ name = col.name; col_type = col.col_type; values }, removed_indices)
 
 let filter_col_flt col predicate =
+  let removed_indices = ref [] in
   let values =
     List.filter
       (fun elt ->
         match elt with
-        | VFloat f -> predicate f
+        | VFloat s ->
+            if predicate s then (
+              let removed_index = find (VFloat s) col.values in
+              removed_indices := removed_index :: !removed_indices;
+              predicate s)
+            else predicate s
         | _ -> failwith "Impossible.")
       col.values
   in
-  { name = col.name; col_type = col.col_type; values }
+  ({ name = col.name; col_type = col.col_type; values }, removed_indices)
 
 let filter_col_bl col predicate =
+  let removed_indices = ref [] in
   let values =
     List.filter
       (fun elt ->
         match elt with
-        | VBool b -> predicate b
+        | VBool s ->
+            if predicate s then (
+              let removed_index = find (VBool s) col.values in
+              removed_indices := removed_index :: !removed_indices;
+              predicate s)
+            else predicate s
         | _ -> failwith "Impossible.")
       col.values
   in
-  { name = col.name; col_type = col.col_type; values }
+  ({ name = col.name; col_type = col.col_type; values }, removed_indices)
 
-let int_helper c value op =
-  let max_width = max_width [ c ] 0 in
+let rec filter_cols cols indices acc =
+  match cols with
+  | [] -> acc
+  | h :: t ->
+      let filtered =
+        List.filteri
+          (fun idx _ -> List.exists (fun lstelt -> lstelt = idx) indices)
+          h.values
+      in
+      let new_col =
+        { col_type = h.col_type; values = filtered; name = h.name }
+      in
+      filter_cols t indices (new_col :: acc)
+
+let int_helper c value op tbl =
   let predicate elt = op elt (int_of_string value) in
-  let new_col = filter_col_int c predicate in
-  let filter_size = List.length new_col.values in
-  print_endline (string_of_int filter_size ^ " results.");
-  Printer.print_col new_col max_width
+  let _, removed_indices = filter_col_int c predicate in
+  let new_cols = filter_cols tbl.cols !removed_indices [] in
+  let new_table = { title = tbl.title; cols = new_cols } in
+  Printer.print_table new_table
 
-let flt_helper c value op =
-  let max_width = max_width [ c ] 0 in
+let flt_helper c value op tbl =
   let predicate elt = op elt (float_of_string value) in
-  let new_col = filter_col_flt c predicate in
-  let filter_size = List.length new_col.values in
-  print_endline (string_of_int filter_size ^ " results.");
-  Printer.print_col new_col max_width
+  let _, removed_indices = filter_col_flt c predicate in
+  let new_cols = filter_cols tbl.cols !removed_indices [] in
+  let new_table = { title = tbl.title; cols = new_cols } in
+  Printer.print_table new_table
 
-let string_helper c value op =
-  let max_width = max_width [ c ] 0 in
+let string_helper c value op tbl =
   let predicate elt = op elt value in
-  let new_col = filter_col_str c predicate in
-  let filter_size = List.length new_col.values in
-  print_endline (string_of_int filter_size ^ " results.");
-  Printer.print_col new_col max_width
+  let _, removed_indices = filter_col_str c predicate in
+  let new_cols = filter_cols tbl.cols !removed_indices [] in
+  let new_table = { title = tbl.title; cols = new_cols } in
+  Printer.print_table new_table
 
-let bool_helper c value op =
-  let max_width = max_width [ c ] 0 in
+let bool_helper c value op tbl =
   let predicate elt = op elt (bool_of_string value) in
-  let new_col = filter_col_bl c predicate in
-  let filter_size = List.length new_col.values in
-  print_endline (string_of_int filter_size ^ " results.");
-  Printer.print_col new_col max_width
+  let _, removed_indices = filter_col_bl c predicate in
+  let new_cols = filter_cols tbl.cols !removed_indices [] in
+  let new_table = { title = tbl.title; cols = new_cols } in
+  Printer.print_table new_table
 
 let find_where (vals : string list) =
   if List.length vals <> 5 then raise Malformed
@@ -415,34 +454,34 @@ let find_where (vals : string list) =
         match c.col_type with
         | TInt -> (
             match op with
-            | "<" -> int_helper c value ( < )
-            | ">" -> int_helper c value ( > )
-            | "=" -> int_helper c value ( = )
-            | "!=" -> int_helper c value ( <> )
-            | "<=" -> int_helper c value ( <= )
-            | ">=" -> int_helper c value ( >= )
+            | "<" -> int_helper c value ( < ) tbl
+            | ">" -> int_helper c value ( > ) tbl
+            | "=" -> int_helper c value ( = ) tbl
+            | "!=" -> int_helper c value ( <> ) tbl
+            | "<=" -> int_helper c value ( <= ) tbl
+            | ">=" -> int_helper c value ( >= ) tbl
             | _ -> raise Malformed)
         | TFloat -> (
             match op with
-            | "<" -> flt_helper c value ( < )
-            | ">" -> flt_helper c value ( > )
-            | "=" -> flt_helper c value ( = )
-            | "!=" -> flt_helper c value ( <> )
-            | "<=" -> flt_helper c value ( <= )
-            | ">=" -> flt_helper c value ( >= )
+            | "<" -> flt_helper c value ( < ) tbl
+            | ">" -> flt_helper c value ( > ) tbl
+            | "=" -> flt_helper c value ( = ) tbl
+            | "!=" -> flt_helper c value ( <> ) tbl
+            | "<=" -> flt_helper c value ( <= ) tbl
+            | ">=" -> flt_helper c value ( >= ) tbl
             | _ -> raise Malformed)
         | TString -> (
             match op with
-            | "<" -> string_helper c value ( < )
-            | ">" -> string_helper c value ( > )
-            | "=" -> string_helper c value ( = )
-            | "!=" -> string_helper c value ( <> )
-            | "<=" -> string_helper c value ( <= )
-            | ">=" -> string_helper c value ( >= )
+            | "<" -> string_helper c value ( < ) tbl
+            | ">" -> string_helper c value ( > ) tbl
+            | "=" -> string_helper c value ( = ) tbl
+            | "!=" -> string_helper c value ( <> ) tbl
+            | "<=" -> string_helper c value ( <= ) tbl
+            | ">=" -> string_helper c value ( >= ) tbl
             | _ -> raise Malformed)
         | TBool -> (
             match op with
-            | "=" -> bool_helper c value ( = )
-            | "!=" -> bool_helper c value ( > )
+            | "=" -> bool_helper c value ( = ) tbl
+            | "!=" -> bool_helper c value ( > ) tbl
             | _ -> raise Malformed)
         | _ -> raise Malformed)
