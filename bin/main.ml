@@ -15,7 +15,7 @@ let load_default =
     read_file "db"
 
 let rec main_repl () =
-  ANSITerminal.print_string [ ANSITerminal.red ] "\nO-DBMShell>> ";
+  ANSITerminal.print_string [ ANSITerminal.yellow ] "\nO-DBMShell>> ";
   match read_line () with
   | exception End_of_file -> ()
   | command_input -> (
@@ -96,12 +96,13 @@ let rec main_repl () =
             main_repl ()
       with
       | Sys_error err -> print_function err [ ANSITerminal.red ] main_repl ()
-      | Failure err ->
+      | Failure _ ->
           print_function
-            ("Invalid argument." ^ err)
+            "Invalid argument passed in!\n\
+             If you are trying to add values to a column, make sure the types \
+             line up by inspecting the column first by printing out the table."
             [ ANSITerminal.red ] main_repl ()
-      | Invalid_argument x ->
-          print_endline x;
+      | Invalid_argument _ ->
           print_function
             "Invalid argument passed in!\n\
              If you are trying to add values to a column, make sure the types \
@@ -151,8 +152,9 @@ let rec main_repl () =
       | TableExists ->
           print_function "A table with that name already exists."
             [ ANSITerminal.red ] main_repl ()
-      (* | MalformedCSV -> print_function "Malformed CSV passed in" [
-         ANSITerminal.red ] main_repl () *)
+      | MalformedCSV ->
+          print_function "Malformed CSV passed in" [ ANSITerminal.red ]
+            main_repl ()
       | HeterogeneousCols ->
           print_function
             "The columns of the csv must be discernibly homogenous. Ambiguity \

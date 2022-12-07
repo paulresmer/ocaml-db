@@ -52,7 +52,7 @@ let help () =
      >> FINDWHERE col (=/>/</<=/>=/!=) val IN t: Print the first row in table \
      t that satisfies the predicate\n\
      >> COUNTWHERE col (=/>/</<=/>=/!=) val IN t: Print the number of rows in \
-     table t that satisfies the predicate\n\n"
+     table t that satisfies the predicate. Only non-primary columns.\n\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -457,13 +457,17 @@ let string_cnt_helper c value op =
   let predicate elt = op elt value in
   let new_col, _ = filter_col_str c predicate in
   let sz = string_of_int (List.length new_col.values) in
-  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+  print_function
+    (sz ^ " rows fit this criteria.")
+    [ ANSITerminal.Foreground ANSITerminal.Green ]
 
 let bool_cnt_helper c value op =
   let predicate elt = op elt (bool_of_string value) in
   let new_col, _ = filter_col_bl c predicate in
   let sz = string_of_int (List.length new_col.values) in
-  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+  print_function
+    (sz ^ " rows fit this criteria.")
+    [ ANSITerminal.Foreground ANSITerminal.Green ]
 
 let find_where (vals : string list) =
   if List.length vals <> 5 then raise Malformed

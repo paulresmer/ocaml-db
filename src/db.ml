@@ -141,7 +141,11 @@ let init_col (name : string) (c_type : string) (table : table) =
     | "STRING" -> TString
     | "PRIM" ->
         if check_if_primary_exists table then raise PrimaryColumnAlreadyExists
-        else TPrim
+        else
+          print_endline
+            "Detected an add of primary type. For database integrity, please \
+             restart the shell using the [quit] command";
+        TPrim
     | _ -> raise InvalidColType
   in
 
