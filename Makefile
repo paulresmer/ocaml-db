@@ -8,3 +8,6 @@ run:
 	
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
+
+doc:
+	dune build @doc

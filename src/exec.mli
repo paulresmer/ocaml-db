@@ -1,85 +1,85 @@
 open Dbtype
 
 exception TableExists
+(**Raised when a table already exists *)
 
-(*[current_database] is a reference to the database in scope *)
 val current_database : db ref
+(**[current_database] is a reference to the database in scope *)
 
-(*[current_file] is a reference to the file in scope i.e. the file the current
-  database is abstracted from*)
 val current_file : string ref
+(**[current_file] is a reference to the file in scope i.e. the file the current
+   database is abstracted from*)
 
-(*[create_table t] creates a new table [t]*)
 val create_table : string -> unit
+(**[create_table t] creates a new table [t]*)
 
-(*[describe_cols t] describes the columns of table [t]*)
 val describe_cols : string -> unit
+(**[describe_cols t] describes the columns of table [t]*)
 
-(*[load_db db] changes the current database to [db]*)
 val load_db : string -> unit
+(**[load_db db] changes the current database to [db]*)
 
-(*[describe_tbls] describes the tables of the current database*)
 val describe_tbls : unit -> unit
+(**[describe_tbls] describes the tables of the current database*)
 
-(*[drop_tbl t] is the current database with table [t] dropped*)
 val drop_tbl : string -> unit
+(**[drop_tbl t] is the current database with table [t] dropped*)
 
-(*[count_tbl t] prints the number of rows in table [t]*)
 val count_tbl : string -> unit
+(**[count_tbl t] prints the number of rows in table [t]*)
 
-(*[insert_into vals] inserts [vals] into the table specified in [vals]*)
 val insert_into : string list -> unit
+(**[insert_into vals] inserts [vals] into the table specified in [vals]*)
 
-(*[add_col vals] adds a column specified in [vals] into the table specified in
-  [vals]*)
 val add_col : string list -> unit
+(**[add_col vals] adds a column specified in [vals] into the table specified in
+   [vals]*)
 
-(*[help] prints the help menu*)
 val help : unit -> unit
+(**[help] prints the help menu*)
 
-(*[quit] exits the REPL*)
 val quit : unit -> unit
+(**[quit] exits the REPL*)
 
-(*[print_table t] pretty-prints table [t]*)
 val print_table : string -> unit
+(**[print_table t] pretty-prints table [t]*)
 
-(*[push] pushes the current database to a remote URL*)
 val push : unit -> unit
+(**[push] pushes the current database to a remote URL*)
 
-(*[save_csv t] saves table [t] as a csv*)
 val save_csv : string -> unit
+(**[save_csv t] saves table [t] as a csv*)
 
-(*[sum t.c] prints the sum of column c in table t*)
 val sum : string -> unit
+(**[sum t.c] prints the sum of column c in table t*)
 
-(*[mean t.c] prints the mean of column c in table t*)
 val mean : string -> unit
+(**[mean t.c] prints the mean of column c in table t*)
 
-(*[max t.c] prints the max of column c in table t*)
 val max : string -> unit
+(**[max t.c] prints the max of column c in table t*)
 
-(*[min t.c] prints the min of column c in table t*)
 val min : string -> unit
+(**[min t.c] prints the min of column c in table t*)
 
-(*[pull id] sets the current database to be the database with id [id] on the
-  cloud*)
 val pull : string -> unit
+(**[pull id] sets the current database to be the database with id [id] on the
+   cloud*)
 
-(*[find_all vals] finds the rows with id spec in [vals] in table spec in
-  [vals]*)
 val find_all : string list -> unit
+(**[find_all vals] finds the rows with id spec in [vals] in table spec in [vals]*)
 
-(*[find_median t.c] prints the median of column c in table t*)
 val find_median : string -> unit
+(**[find_median t.c] prints the median of column c in table t*)
 
-(*[find_variance t.c] prints the variance of column c in table t*)
 val find_variance : string -> unit
+(**[find_variance t.c] prints the variance of column c in table t*)
 
-(*[find_dev t.c] prints the variance of column c in table t*)
 val find_dev : string -> unit
+(**[find_dev t.c] prints the variance of column c in table t*)
 
-(*[load_csv vals] loads a csv into a table*)
 val load_csv : string list -> unit
+(**[load_csv vals] loads a csv into a table*)
 
-(*[find_where t] runs the find-where command on the parameters specified in t*)
 val find_where : string list -> unit
+(**[find_where t] runs the find-where command on the parameters specified in t*)
