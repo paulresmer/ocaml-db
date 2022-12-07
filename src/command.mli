@@ -61,8 +61,11 @@ type command =
       (**The [LoadCSV f INTO t] command loads the contents of csv file [f] into
          table [t]*)
   | FindWhere of string list
-      (**The [FINDWHERE t] command prints the rows that satisfy the predicate,
-         where these parameters are specified in t*)
+      (**The [FINDWHERE t] command prints the first row that satisfies the
+         predicate, where these parameters are specified in t*)
+  | CountWhere of string list
+      (**The [CountWhere t] command prints the number of rows that satisfy the
+         predicate, where these parameters are specified in t*)
 
 (**A value of type [command] represents a particular command that can be input
    by a user to interact with the database*)

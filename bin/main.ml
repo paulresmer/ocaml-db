@@ -91,6 +91,9 @@ let rec main_repl () =
         | FindWhere t ->
             find_where t;
             main_repl ()
+        | CountWhere t ->
+            count_where t;
+            main_repl ()
       with
       | Sys_error err -> print_function err [ ANSITerminal.red ] main_repl ()
       | Failure err ->

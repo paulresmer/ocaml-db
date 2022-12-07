@@ -50,7 +50,9 @@ let help () =
      Query: \n\
      >> FINDPRIM n IN t: Print row in t with primary key n\n\
      >> FINDWHERE col (=/>/</<=/>=/!=) val IN t: Print the first row in table \
-     t that satisfy the predicate\n"
+     t that satisfies the predicate\n\
+     >> COUNTWHERE col (=/>/</<=/>=/!=) val IN t: Print the number of rows in \
+     table t that satisfies the predicate\n\n"
     [ ANSITerminal.cyan ]
 
 let create_table (name : string) =
@@ -439,6 +441,30 @@ let bool_helper c value op tbl =
   let new_table = { title = tbl.title; cols = new_cols } in
   Printer.print_table new_table
 
+let int_cnt_helper c value op =
+  let predicate elt = op elt (int_of_string value) in
+  let new_col, _ = filter_col_int c predicate in
+  let sz = string_of_int (List.length new_col.values) in
+  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+
+let flt_cnt_helper c value op =
+  let predicate elt = op elt (float_of_string value) in
+  let new_col, _ = filter_col_flt c predicate in
+  let sz = string_of_int (List.length new_col.values) in
+  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+
+let string_cnt_helper c value op =
+  let predicate elt = op elt value in
+  let new_col, _ = filter_col_str c predicate in
+  let sz = string_of_int (List.length new_col.values) in
+  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+
+let bool_cnt_helper c value op =
+  let predicate elt = op elt (bool_of_string value) in
+  let new_col, _ = filter_col_bl c predicate in
+  let sz = string_of_int (List.length new_col.values) in
+  print_function (sz ^ " rows fit this criteria.") [ ANSITerminal.Bold ]
+
 let find_where (vals : string list) =
   if List.length vals <> 5 then raise Malformed
   else
@@ -483,5 +509,52 @@ let find_where (vals : string list) =
             match op with
             | "=" -> bool_helper c value ( = ) tbl
             | "!=" -> bool_helper c value ( > ) tbl
+            | _ -> raise Malformed)
+        | _ -> raise Malformed)
+
+let count_where (vals : string list) =
+  if List.length vals <> 5 then raise Malformed
+  else
+    let tbl_name = List.hd (List.rev vals) in
+    let tbl = find_table tbl_name !current_database in
+    let col_name = List.hd vals in
+    let col = List.find_opt (fun elt -> elt.name = col_name) tbl.cols in
+    match col with
+    | None -> raise InvalidColumn
+    | Some c -> (
+        let op = List.nth vals 1 in
+        let value = List.nth vals 2 in
+        match c.col_type with
+        | TInt -> (
+            match op with
+            | "<" -> int_cnt_helper c value ( < )
+            | ">" -> int_cnt_helper c value ( > )
+            | "=" -> int_cnt_helper c value ( = )
+            | "!=" -> int_cnt_helper c value ( <> )
+            | "<=" -> int_cnt_helper c value ( <= )
+            | ">=" -> int_cnt_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TFloat -> (
+            match op with
+            | "<" -> flt_cnt_helper c value ( < )
+            | ">" -> flt_cnt_helper c value ( > )
+            | "=" -> flt_cnt_helper c value ( = )
+            | "!=" -> flt_cnt_helper c value ( <> )
+            | "<=" -> flt_cnt_helper c value ( <= )
+            | ">=" -> flt_cnt_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TString -> (
+            match op with
+            | "<" -> string_cnt_helper c value ( < )
+            | ">" -> string_cnt_helper c value ( > )
+            | "=" -> string_cnt_helper c value ( = )
+            | "!=" -> string_cnt_helper c value ( <> )
+            | "<=" -> string_cnt_helper c value ( <= )
+            | ">=" -> string_cnt_helper c value ( >= )
+            | _ -> raise Malformed)
+        | TBool -> (
+            match op with
+            | "=" -> bool_cnt_helper c value ( = )
+            | "!=" -> bool_cnt_helper c value ( > )
             | _ -> raise Malformed)
         | _ -> raise Malformed)

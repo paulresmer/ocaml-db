@@ -26,6 +26,7 @@ type command =
   | FindPrim of string list
   | LoadCSV of string list
   | FindWhere of string list
+  | CountWhere of string list
 
 (** [check_for_empty elem] is [true] if [elem] is the empty string, [false]
     otherwise. *)
@@ -68,6 +69,7 @@ let parse s =
         | "DEV" -> StdDev (String.concat " " t)
         | "LOADCSV" -> LoadCSV t
         | "FINDWHERE" -> FindWhere t
+        | "COUNTWHERE" -> CountWhere t
         | _ -> raise Empty
       end
     | [] -> raise Empty

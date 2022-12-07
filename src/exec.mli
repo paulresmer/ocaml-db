@@ -83,3 +83,6 @@ val load_csv : string list -> unit
 
 val find_where : string list -> unit
 (**[find_where t] runs the find-where command on the parameters specified in t*)
+
+val count_where : string list -> unit
+(**[count_where t] runs the count-where command on the parameters specified in t*)
