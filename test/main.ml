@@ -11,13 +11,13 @@
 
    The following features were manually tested:
 
-   inserting a data entry into a table loading a csv file as a table pushing a
-   database into a cloud pulling a database from the cloud calculating the mean
-   of a column, if applicable calculating the median of a column, if applicable
-   calculating the sum of a column, if applicable calculating the maximum of a
-   column, if applicable calculating the minimum of a column, if applicable
-   querying a row against a primary key querying a row that satisfy a predicate
-   and counting the number of rows that satisfy some predicate
+   inserting a data entry into a table, loading a csv file as a table, pushing a
+   database into a cloud, pulling a database from the cloud, calculating the
+   mean of a column, if applicable calculating the median of a column, if
+   applicable calculating the sum of a column, if applicable calculating the
+   maximum of a column, if applicable calculating the minimum of a column, if
+   applicable querying a row against a primary key querying a row that satisfy a
+   predicate and counting the number of rows that satisfy some predicate
 
    These tests were conducted manually by providing input to the database and
    verifying the output against the expected results.
@@ -53,10 +53,10 @@ let col5 : Dbtype.column =
   { name = "col5"; values = [ v3; v4 ]; col_type = Dbtype.TString }
 
 let col6 : Dbtype.column =
-  { name = "col5"; values = [ v3 ]; col_type = Dbtype.TString }
+  { name = "col6"; values = [ v3 ]; col_type = Dbtype.TString }
 
-let col8 : Dbtype.column =
-  { name = "col7"; values = [ v5 ]; col_type = Dbtype.TBool }
+let _col8 : Dbtype.column =
+  { name = "col8"; values = [ v5 ]; col_type = Dbtype.TBool }
 
 let col7 : Dbtype.column = { name = ""; values = []; col_type = Dbtype.TString }
 
@@ -69,7 +69,7 @@ let _tbl5 : Dbtype.table = { title = "tbl5"; cols = [ col2; col3 ] }
 let _tbl6 : Dbtype.table = { title = "tbl6"; cols = [ col2; col6 ] }
 let _tbl7 : Dbtype.table = { title = "tbl7"; cols = [ col4; col5 ] }
 let tbl8 : Dbtype.table = { title = ""; cols = [] }
-let tbl9 : Dbtype.table = { title = "tbl9"; cols = [ col7; col7 ] }
+let tbl9 : Dbtype.table = { title = "tbl9"; cols = [ col7 ] }
 
 (*sample databases*)
 let db1 : Dbtype.db = []
@@ -220,12 +220,10 @@ let db_tests =
     col_name_test "name of col1 is \"col1\"" "col1" col1;
     col_name_test "name of col7 is \"\"" "" col7;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
-    get_col_test "get col8 from tbl8" col8 "col8" tbl8;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
     get_col_test "get col1 from tbl3" col1 "col1" tbl3;
     get_col_test "get col2 from tbl3" col2 "col2" tbl3;
-    get_col_test "get col8 from tbl9" col8 "col8" tbl9;
-    get_col_test "get col7 from tbl9" col7 "col7" tbl9;
+    get_col_test "get col7 from tbl9" col7 "" tbl9;
     rename_col_test "rename col1 with name \"\"" col7 "" col1;
     init_table_test "initialize empty table in db1" db2 "tbl1" db1;
     init_table_test "initialize empty table in db1" db3 "tbl1" db4;
