@@ -13,4 +13,5 @@ doc:
 	dune build @doc
 
 count: 
+	dune clean
 	cloc --by-file --include-lang=OCaml .
