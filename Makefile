@@ -11,3 +11,6 @@ test:
 
 doc:
 	dune build @doc
+
+count: 
+	cloc --by-file --include-lang=OCaml .
