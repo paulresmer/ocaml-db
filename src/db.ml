@@ -66,7 +66,7 @@ let rec primitive_to_values (primitives : string list) (columns : column list)
 let rec insert_helper (values : value list) (columns : column list)
     (table : table) =
   match (values, columns) with
-  | [], [] -> table
+  | [], [] -> { table with cols = List.rev table.cols }
   | v_head :: v_tail, c_head :: c_tail ->
       let new_col = add_to_col v_head c_head in
       insert_helper v_tail c_tail (add_to_tbl new_col table)
