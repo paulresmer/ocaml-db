@@ -116,7 +116,9 @@ let insert_into (vals : string list) =
         in
         let vals = primitive_to_values primitive_lst cols [] in
         let tbl = find_table tbl_name !current_database in
+
         let new_tbl = insert_row vals tbl in
+
         let new_db = update_tbl new_tbl !current_database in
         let _ = current_database := new_db in
         let _ = save !current_database (!current_file ^ ".json") in
