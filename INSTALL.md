@@ -13,6 +13,10 @@
 
 - Install cohttp-lwt-unix. Run [opam install cohttp-lwt-unix]
 
+- Install csv. Run [opam install csv]
+
+- Install str Run [opam install str]
+
 - Run [dune build]
 
 - Run [make run]
