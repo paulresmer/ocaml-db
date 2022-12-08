@@ -212,11 +212,6 @@ let count_tbl_test (name : string) (expected : int) (input_tbl : string)
 let db_tests =
   [
     insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
-    (* insert_row_test "insert empty row to table" tbl2 [] tbl2; insert_row_test
-       "insert row of length 1 to empty table" tbl4 [ v1 ] tbl1; insert_row_test
-       "insert row of length 2 to empty table" tbl5 [ v1; v2 ] tbl1;
-       insert_row_test "insert row of length 2 to table" tbl7 [ v2; v4 ]
-       tbl6; *)
     col_name_test "name of col1 is \"col1\"" "col1" col1;
     col_name_test "name of col7 is \"\"" "" col7;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
