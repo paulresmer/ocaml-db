@@ -1,1 +1,1 @@
-{ "tables": [{ "title": "tbl1", "columns": [{ "name": "name", "values": ["andrew", "nirbhay"], "type": "String"}]}]}
+{ "tables": [{ "title": "tbl1", "columns": []}]}
