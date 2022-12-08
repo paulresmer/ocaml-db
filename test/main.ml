@@ -35,6 +35,9 @@ let v2 : Dbtype.value = VInt 2
 let v3 : Dbtype.value = VString "a"
 let v4 : Dbtype.value = VString "b"
 let v5 : Dbtype.value = VBool false
+let v6 : Dbtype.value = VFloat 3.4
+let v7 : Dbtype.value = VFloat (-5.9)
+let v8 : Dbtype.value = VBool true
 
 (*sample columns*)
 let col1 : Dbtype.column =
@@ -210,6 +213,13 @@ let update_tbl_test (name : string) (expected : Dbtype.db)
     (Db.update_tbl input_tbl input_db)
     ~printer:Stringify.stringify_db
 
+let table_exists_test (name : string) (expected : bool)
+    (input_tbl_name : string) (input_db : Dbtype.db) =
+  name >:: fun _ ->
+  assert_equal expected
+    (Db.table_exists input_tbl_name input_db)
+    ~printer:Bool.to_string
+
 let db_tests =
   [
     col_name_test "name of col1 is \"col1\"" "col1" col1;
@@ -238,6 +248,9 @@ let db_tests =
     update_tbl_test "update db4 to db3" db3 tbl1 db4;
     update_tbl_test "update db2 to db2" db2 tbl1 db2;
     update_tbl_test "update db5 to db6" db6 tbl2 db5;
+    table_exists_test "test table_exist for non-existent table" false "faketbl"
+      db1;
+    table_exists_test "test table_exist for existing table" true "tbl1" db2;
   ]
 
 (*test Command*)
@@ -271,6 +284,10 @@ let dbtype_tests =
     value_string_test "Int Value Type" "2" v2;
     value_string_test "String Value Type" "a" v3;
     value_string_test "String Value Type" "b" v4;
+    value_string_test "Float Value Type" "3.4" v6;
+    value_string_test "Float Value Type (Negative)" "-5.9" v7;
+    value_string_test "Bool Value Type (false)" "false" v5;
+    value_string_test "Bool Value Type (true)" "true" v8;
   ]
 
 let suite =
