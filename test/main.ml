@@ -209,6 +209,13 @@ let count_tbl_test (name : string) (expected : int) (input_tbl : string)
   name >:: fun _ ->
   assert_equal expected (Db.count_tbl input_tbl input_db) ~printer:Int.to_string
 
+let table_exists_test (name : string) (expected : bool)
+    (input_tbl_name : string) (input_db : Dbtype.db) =
+  name >:: fun _ ->
+  assert_equal expected
+    (Db.table_exists input_tbl_name input_db)
+    ~printer:Bool.to_string
+
 let db_tests =
   [
     insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
@@ -234,6 +241,9 @@ let db_tests =
     count_tbl_test "tbl1 in db2 has 0 columns" 0 "tbl1" db2;
     count_tbl_test "tbl2 in db3 has 1 column" 1 "tbl2" db3;
     count_tbl_test "tbl3 in db5 has 2 columns" 2 "tbl3" db5;
+    table_exists_test "test table_exist for non-existent table" false "faketbl"
+      db1;
+    table_exists_test "test table_exist for existing table" true "tbl1" db2;
   ]
 
 (*test Command*)
