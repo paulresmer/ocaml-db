@@ -1,4 +1,4 @@
 (library
  (name SQLDB)
  (public_name SQLDB)
- (libraries yojson))
+ (libraries yojson ANSITerminal cohttp lwt cohttp-lwt-unix str csv))

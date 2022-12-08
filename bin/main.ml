@@ -1,6 +1,8 @@
 open SQLDB.Command
 open SQLDB.Destringify
 open SQLDB.Db
+open SQLDB.Exec
+open SQLDB.Csv_read
 
 (** [print_function msg color func] prints string [msg] in color [color] and
     then calls function [func] after the printing is complete *)
@@ -12,76 +14,152 @@ let load_default =
   print_function "Loading default database db.json" [ ANSITerminal.cyan ]
     read_file "db"
 
-let current_database = ref (read_file "db")
-
 let rec main_repl () =
-  ANSITerminal.print_string [ ANSITerminal.red ] "\nO-DBMShell>> ";
+  ANSITerminal.print_string [ ANSITerminal.yellow ] "\nO-DBMShell>> ";
   match read_line () with
   | exception End_of_file -> ()
   | command_input -> (
       try
         match parse command_input with
         | Help ->
-            print_function
-              "Available commands\n\
-               CREATE t: create a new,empty table with name t.\n\
-               COLS t: Print the columns of table t\n\
-               LOAD n: Load file n.json as the current database.\n\
-               TBLS: Display current tables.\n\
-               DROP t: Drop table t from the db.\n\
-               COUNT t: Display number of rows in table t."
-              [ ANSITerminal.cyan ] main_repl ()
+            help ();
+            main_repl ()
         | TableInit t ->
-            let newdb = init_table t !current_database in
-            let _ = current_database := newdb in
-            print_function ("\nCreated table " ^ t) [ ANSITerminal.cyan ]
-              main_repl ()
+            create_table t;
+            main_repl ()
         | DescribeCols t ->
-            let cols = cols_of_table t !current_database in
-            let col_names = List.map (fun elt -> col_name elt) cols in
-            let col_str = String.concat "\n" col_names in
-            if col_str <> "" then
-              print_function ("Columns:\n" ^ col_str) [ ANSITerminal.cyan ]
-                main_repl ()
-            else
-              print_function "Table is empty." [ ANSITerminal.red ] main_repl ()
+            describe_cols t;
+            main_repl ()
         | LoadDB t ->
-            let _ = current_database := read_file t in
-            print_function "Current database updated." [ ANSITerminal.red ]
-              main_repl ()
+            load_db t;
+            main_repl ()
         | DescribeTbls ->
-            let tbls =
-              List.map (fun tbl -> table_title tbl) !current_database
-            in
-            let tbls_str = String.concat "\n" tbls in
-            if tbls_str <> "" then
-              print_function ("Tables:\n" ^ tbls_str) [ ANSITerminal.cyan ]
-                main_repl ()
-            else
-              print_function "Database is empty." [ ANSITerminal.red ] main_repl
-                ()
+            describe_tbls ();
+            main_repl ()
         | DropTbl t ->
-            let updated = drop_tbl t !current_database in
-            let _ = current_database := updated in
-            print_function ("Dropped table " ^ t) [ ANSITerminal.cyan ]
-              main_repl ()
+            drop_tbl t;
+            main_repl ()
         | CountTbl t ->
-            let sz = count_tbl t !current_database in
-            print_function
-              ("COUNT:" ^ string_of_int sz)
-              [ ANSITerminal.cyan ] main_repl ()
+            count_tbl t;
+            main_repl ()
+        | InsertRow t ->
+            insert_into t;
+            main_repl ()
+        | AddCols t ->
+            add_col t;
+            main_repl ()
+        | Quit -> quit ()
+        | PrintTbl t ->
+            print_table t;
+            main_repl ()
+        | Push ->
+            push ();
+            main_repl ()
+        | SaveCSV t ->
+            save_csv t;
+            main_repl ()
+        | Sum t ->
+            sum t;
+            main_repl ()
+        | Mean t ->
+            mean t;
+            main_repl ()
+        | Max t ->
+            max t;
+            main_repl ()
+        | Min t ->
+            min t;
+            main_repl ()
+        | Pull t ->
+            pull t;
+            main_repl ()
+        | FindPrim t ->
+            find_all t;
+            main_repl ()
+        | Median t ->
+            find_median t;
+            main_repl ()
+        | Var t ->
+            find_variance t;
+            main_repl ()
+        | StdDev t ->
+            find_dev t;
+            main_repl ()
+        | LoadCSV t ->
+            load_csv t;
+            main_repl ()
+        | FindWhere t ->
+            find_where t;
+            main_repl ()
+        | CountWhere t ->
+            count_where t;
+            main_repl ()
       with
+      | Sys_error err -> print_function err [ ANSITerminal.red ] main_repl ()
+      | Failure _ ->
+          print_function
+            "Invalid argument passed in!\n\
+             If you are trying to add values to a column, make sure the types \
+             line up by inspecting the column first by printing out the table."
+            [ ANSITerminal.red ] main_repl ()
+      | Invalid_argument _ ->
+          print_function
+            "Invalid argument passed in!\n\
+             If you are trying to add values to a column, make sure the types \
+             line up by inspecting the column first."
+            [ ANSITerminal.red ] main_repl ()
+      | Not_found ->
+          print_function "Argument not found!" [ ANSITerminal.red ] main_repl ()
+      | InvalidFind ->
+          print_function "Could not find a valid row with that id."
+            [ ANSITerminal.red ] main_repl ()
+      | ColumnValueMismatch ->
+          print_function "Not enough values provided." [ ANSITerminal.red ]
+            main_repl ()
+      | InvalidNumericColumn ->
+          print_function "Cannot sum over specified column."
+            [ ANSITerminal.red ] main_repl ()
+      | Malformed ->
+          print_function "Invalid input. Enter HELP." [ ANSITerminal.red ]
+            main_repl ()
       | Empty ->
-          print_function "Invalid input. Enter HELP." [ ANSITerminal.cyan ]
+          print_function "Empty input. Enter HELP." [ ANSITerminal.red ]
             main_repl ()
       | InvalidAdd ->
-          print_function "Table already exists." [ ANSITerminal.red ] main_repl
-            ()
+          print_function "Invalid add." [ ANSITerminal.red ] main_repl ()
+      | InvalidInsert ->
+          print_function "Invalid insert." [ ANSITerminal.red ] main_repl ()
       | InvalidTableName ->
           print_function "Table does not exist." [ ANSITerminal.red ] main_repl
             ()
       | InvalidDB ->
-          print_function "Invalid file." [ ANSITerminal.red ] main_repl ())
+          print_function "Invalid file." [ ANSITerminal.red ] main_repl ()
+      | InvalidColType ->
+          print_function "Invalid column type." [ ANSITerminal.red ] main_repl
+            ()
+      | InvalidColumn ->
+          print_function "Column does not exist." [ ANSITerminal.red ] main_repl
+            ()
+      | PrimaryColumnAlreadyExists ->
+          print_function "Table already has a primary key." [ ANSITerminal.red ]
+            main_repl ()
+      | PrimaryKeyAlreadyExists ->
+          print_function "A primary key with that value already exists"
+            [ ANSITerminal.red ] main_repl ()
+      | Yojson.Basic.Util.Type_error _ ->
+          print_function "Not a valid remote id." [ ANSITerminal.red ] main_repl
+            ()
+      | TableExists ->
+          print_function "A table with that name already exists."
+            [ ANSITerminal.red ] main_repl ()
+      | MalformedCSV ->
+          print_function "Malformed CSV passed in" [ ANSITerminal.red ]
+            main_repl ()
+      | HeterogeneousCols ->
+          print_function
+            "The columns of the csv must be discernibly homogenous. Ambiguity \
+             detected in contents."
+            [ ANSITerminal.red ] main_repl ())
 
 (*run REPL loop*)
 let () =

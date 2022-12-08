@@ -6,6 +6,7 @@ let v1 : Dbtype.value = VInt 1
 let v2 : Dbtype.value = VInt 2
 let v3 : Dbtype.value = VString "a"
 let v4 : Dbtype.value = VString "b"
+let v5 : Dbtype.value = VBool false
 
 (*sample columns*)
 let col1 : Dbtype.column =
@@ -26,6 +27,9 @@ let col5 : Dbtype.column =
 let col6 : Dbtype.column =
   { name = "col5"; values = [ v3 ]; col_type = Dbtype.TString }
 
+let col8 : Dbtype.column =
+  { name = "col7"; values = [ v5 ]; col_type = Dbtype.TBool }
+
 let col7 : Dbtype.column = { name = ""; values = []; col_type = Dbtype.TString }
 
 (*sample tables*)
@@ -37,6 +41,7 @@ let _tbl5 : Dbtype.table = { title = "tbl5"; cols = [ col2; col3 ] }
 let _tbl6 : Dbtype.table = { title = "tbl6"; cols = [ col2; col6 ] }
 let _tbl7 : Dbtype.table = { title = "tbl7"; cols = [ col4; col5 ] }
 let tbl8 : Dbtype.table = { title = ""; cols = [] }
+let tbl9 : Dbtype.table = { title = "tbl9"; cols = [ col7; col7 ] }
 
 (*sample databases*)
 let db1 : Dbtype.db = []
@@ -115,10 +120,13 @@ let destringify_tests =
   ]
 
 (*test Db*)
-(*let insert_row_test (name : string) (expected : Dbtype.table) (input_row :
-  Dbtype.value list) (input_table : Dbtype.table) = name >:: fun _ ->
-  assert_equal expected (Db.insert_row input_row input_table)
-  ~printer:Stringify.stringify_table*)
+let insert_row_test (name : string) (expected : Dbtype.table)
+    (input_row : Dbtype.value list) (input_table : Dbtype.table) =
+  name >:: fun _ ->
+  assert_equal expected
+    (Db.insert_row input_row input_table)
+    ~printer:Stringify.stringify_table
+
 let col_name_test (name : string) (expected : string) (input : Dbtype.column) =
   name >:: fun _ ->
   assert_equal expected (Db.col_name input) ~printer:String.capitalize_ascii
@@ -175,17 +183,21 @@ let count_tbl_test (name : string) (expected : int) (input_tbl : string)
 
 let db_tests =
   [
-    (*insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
-      insert_row_test "insert empty row to table" tbl2 [] tbl2; insert_row_test
-      "insert row of length 1 to empty table" tbl4 [ v1 ] tbl1; insert_row_test
-      "insert row of length 2 to empty table" tbl5 [ v1; v2 ] tbl1;
-      insert_row_test "insert row of length 2 to table" tbl7 [ v2; v4 ] tbl6;*)
+    insert_row_test "insert empty row to empty table" tbl1 [] tbl1;
+    (* insert_row_test "insert empty row to table" tbl2 [] tbl2; insert_row_test
+       "insert row of length 1 to empty table" tbl4 [ v1 ] tbl1; insert_row_test
+       "insert row of length 2 to empty table" tbl5 [ v1; v2 ] tbl1;
+       insert_row_test "insert row of length 2 to table" tbl7 [ v2; v4 ]
+       tbl6; *)
     col_name_test "name of col1 is \"col1\"" "col1" col1;
     col_name_test "name of col7 is \"\"" "" col7;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
+    get_col_test "get col8 from tbl8" col8 "col8" tbl8;
     get_col_test "get col1 from tbl2" col1 "col1" tbl2;
     get_col_test "get col1 from tbl3" col1 "col1" tbl3;
     get_col_test "get col2 from tbl3" col2 "col2" tbl3;
+    get_col_test "get col8 from tbl9" col8 "col8" tbl9;
+    get_col_test "get col7 from tbl9" col7 "col7" tbl9;
     rename_col_test "rename col1 with name \"\"" col7 "" col1;
     init_table_test "initialize empty table in db1" db2 "tbl1" db1;
     init_table_test "initialize empty table in db1" db3 "tbl1" db4;
@@ -215,14 +227,33 @@ let command_tests =
   ]
 
 (*test Dbtype*)
-let dbtype_tests = []
+
+let type_string_test (name : string) (expected : string)
+    (input_db : Dbtype.col_type) =
+  name >:: fun _ -> assert_equal expected (Dbtype.type_to_string input_db)
+
+let value_string_test (name : string) (expected : string)
+    (input_val : Dbtype.value) =
+  name >:: fun _ -> assert_equal expected (Dbtype.to_string input_val)
+
+let dbtype_tests =
+  [
+    type_string_test "Int Column Type" "Int" col2.col_type;
+    type_string_test "Int Column Type" "Int" col4.col_type;
+    type_string_test "String Column Type" "String" col5.col_type;
+    type_string_test "String Column Type" "String" col7.col_type;
+    value_string_test "Int Value Type" "1" v1;
+    value_string_test "Int Value Type" "2" v2;
+    value_string_test "String Value Type" "a" v3;
+    value_string_test "String Value Type" "b" v4;
+  ]
 
 let suite =
   ""
   >::: List.flatten
          [
            stringify_tests @ destringify_tests @ command_tests @ dbtype_tests
-           @ db_tests;
+           @ db_tests @ command_tests;
          ]
 
 let _ = run_test_tt_main suite

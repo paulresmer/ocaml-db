@@ -9,6 +9,10 @@ run:
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
 
-code:
+doc:
+	dune build @doc
+
+count: 
 	dune clean
-	code .
+	cloc --by-file --include-lang=OCaml .
+

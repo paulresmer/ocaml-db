@@ -14,7 +14,10 @@ let col_map_helper col =
         col_type = TInt;
         values =
           List.map
-            (fun elt -> elt |> to_string |> int_of_string |> from_int)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then 0 else int_of_string elt)
+              |> from_int)
             values;
         name;
       }
@@ -29,7 +32,10 @@ let col_map_helper col =
         col_type = TFloat;
         values =
           List.map
-            (fun elt -> elt |> to_string |> float_of_string |> from_float)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then 0. else float_of_string elt)
+              |> from_float)
             values;
         name;
       }
@@ -38,10 +44,27 @@ let col_map_helper col =
         col_type = TBool;
         values =
           List.map
-            (fun elt -> elt |> to_string |> bool_of_string |> from_bool)
+            (fun elt ->
+              elt |> to_string
+              |> (fun elt -> if elt = "NULL" then false else bool_of_string elt)
+              |> from_bool)
             values;
         name;
       }
+  | "Primary" ->
+      let clean =
+        if Yojson.Basic.Util.to_string (List.hd values) = "NULL" then
+          List.init (List.length values) (fun i -> VPrim (i + 1))
+        else
+          List.map
+            (fun elt ->
+              elt |> to_string
+              |> Str.(global_replace (regexp "#") "")
+              |> int_of_string
+              |> fun elt -> VPrim elt)
+            values
+      in
+      { col_type = TPrim; values = clean; name }
   | _ -> raise InvalidDB
 
 let table_map_helper tbl =
@@ -55,3 +78,10 @@ let read_file (name : string) : db =
   else
     let tables = Yojson.Basic.from_file path |> member "tables" |> to_list in
     List.map table_map_helper tables
+
+let parse_string (json : string) : db =
+  let tables =
+    Yojson.Basic.from_string json
+    |> member "record" |> member "tables" |> to_list
+  in
+  List.map table_map_helper tables
