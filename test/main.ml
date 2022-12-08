@@ -1,3 +1,33 @@
+(* The following features of the database were tested using OUnit:
+
+   creating a table into a database listing columns of a table loading a json as
+   a table into the database listing current tables in a database dropping a
+   table from a database counting the number of entries inside a table
+
+   These tests were developed using a black box testing approach, where we
+   tested the functionality of the database without considering the internal
+   implementation. The test cases were created by providing input to the
+   database and verifying the output against the expected results.
+
+   The following features were manually tested:
+
+   inserting a data entry into a table loading a csv file as a table pushing a
+   database into a cloud pulling a database from the cloud calculating the mean
+   of a column, if applicable calculating the median of a column, if applicable
+   calculating the sum of a column, if applicable calculating the maximum of a
+   column, if applicable calculating the minimum of a column, if applicable
+   querying a row against a primary key querying a row that satisfy a predicate
+   counting the number of rows that satisfy some predicate joining two tables on
+   a common column grouping rows by a certain column and calculating statistics
+   for each group backing up and restoring a database
+
+   These tests were conducted manually by providing input to the database and
+   verifying the output against the expected results.
+
+   The testing approach used in this test plan demonstrates the correctness of
+   the system because it covers a wide range of functionalities and provides a
+   high level of confidence that the database works as intended. *)
+
 open OUnit2
 open SQLDB
 
