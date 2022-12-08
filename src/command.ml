@@ -41,11 +41,11 @@ let list_phrases str =
     string [str] *)
 let parse s =
   let sanitised_str = s |> String.trim in
-  if sanitised_str = "HELP" then Help
+  if String.uppercase_ascii sanitised_str = "HELP" then Help
   else
     match list_phrases sanitised_str with
     | h :: t -> begin
-        match h with
+        match String.uppercase_ascii h with
         | "CREATE" -> TableInit (String.concat " " t)
         | "COLS" -> DescribeCols (String.concat " " t)
         | "LOAD" -> LoadDB (String.concat " " t)
