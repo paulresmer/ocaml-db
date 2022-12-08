@@ -8,3 +8,7 @@ run:
 	
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
+
+code:
+	dune clean
+	code .
