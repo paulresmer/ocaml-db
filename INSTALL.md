@@ -7,6 +7,12 @@
 
 - Install Yojson. Run [opam install yojson]
 
+- Install cohttp. Run [opam install cohttp]
+
+- Install lwt. Run [opam install lwt]
+
+- Install cohttp-lwt-unix. Run [opam install cohttp-lwt-unix]
+
 - Run [dune build]
 
 - Run [make run]
