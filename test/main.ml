@@ -35,6 +35,8 @@ let v2 : Dbtype.value = VInt 2
 let v3 : Dbtype.value = VString "a"
 let v4 : Dbtype.value = VString "b"
 let v5 : Dbtype.value = VBool false
+let v6 : Dbtype.value = VFloat 3.4
+let v7 : Dbtype.value = VFloat (-5.9)
 
 (*sample columns*)
 let col1 : Dbtype.column =
@@ -277,6 +279,8 @@ let dbtype_tests =
     value_string_test "Int Value Type" "2" v2;
     value_string_test "String Value Type" "a" v3;
     value_string_test "String Value Type" "b" v4;
+    value_string_test "Float Value Type" "3.4" v6;
+    value_string_test "Float Value Type (Negative)" "-5.9" v7;
   ]
 
 let suite =
