@@ -17,8 +17,7 @@
    calculating the sum of a column, if applicable calculating the maximum of a
    column, if applicable calculating the minimum of a column, if applicable
    querying a row against a primary key querying a row that satisfy a predicate
-   counting the number of rows that satisfy some predicate and calculating
-   statistics for each group backing up and restoring a database
+   and counting the number of rows that satisfy some predicate
 
    These tests were conducted manually by providing input to the database and
    verifying the output against the expected results.
