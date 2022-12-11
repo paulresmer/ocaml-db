@@ -1,23 +1,25 @@
 (* The following features of the database were tested using OUnit:
 
-   creating a table into a database listing columns of a table loading a json as
-   a table into the database listing current tables in a database dropping a
-   table from a database counting the number of entries inside a table
+   1.creating a table into a database listing columns of a table 2.loading a
+   json as a table into the database 3.listing current tables in a database
+   4.dropping a table from a database 5.counting the number of entries inside a
+   table
 
    These tests were developed using a black box testing approach, where we
    tested the functionality of the database without considering the internal
    implementation. The test cases were created by providing input to the
    database and verifying the output against the expected results.
 
-   The following features were manually tested:
+   The following features were manually tested with REPL interaction:
 
-   inserting a data entry into a table, loading a csv file as a table, pushing a
-   database into a cloud, pulling a database from the cloud, calculating the
-   mean of a column, if applicable calculating the median of a column, if
-   applicable calculating the sum of a column, if applicable calculating the
-   maximum of a column, if applicable calculating the minimum of a column, if
-   applicable querying a row against a primary key querying a row that satisfy a
-   predicate and counting the number of rows that satisfy some predicate
+   1. inserting a data entry into a table 2. loading a csv file as a table 3.
+   pushing a database to the cloud 4. pulling a database from the cloud 5.
+   calculating the mean of a column, if applicable 6. calculating the median of
+   a column, if applicable 7. calculating the sum of a column, if applicable 8.
+   calculating the maximum of a column, if applicable 9. calculating the minimum
+   of a column, if applicable 10. querying a row against a primary key 11.
+   querying a row that satisfy a predicate and 12. counting the number of rows
+   that satisfy some predicate
 
    These tests were conducted manually by providing input to the database and
    verifying the output against the expected results.
