@@ -1,0 +1,81 @@
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :1:sample col with one value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :1:sample col with one value is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :1:sample col with one value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :3:sample table with no columns.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :3:sample table with no columns is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :3:sample table with no columns.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :5:sample table with two columns.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :5:sample table with two columns is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :5:sample table with two columns.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :7:sample database with one table.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :7:sample database with one table is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :7:sample database with one table.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :10:destringify db2.json.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :10:destringify db2.json is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :10:destringify db2.json.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :12:HELP is HELP.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :12:HELP is HELP is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :12:HELP is HELP.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :13:HELP is HELP.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :13:HELP is HELP is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :13:HELP is HELP.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :15:Int Column Type.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :15:Int Column Type is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :15:Int Column Type.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :17:String Column Type.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :17:String Column Type is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :17:String Column Type.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :19:String type test.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :19:String type test is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :19:String type test.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :21:Int Value Type for int.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :21:Int Value Type for int is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :21:Int Value Type for int.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :23:String Value Type for string.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :23:String Value Type for string is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :23:String Value Type for string.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :25:String Value type for prim.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :25:String Value type for prim is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :25:String Value type for prim.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :27:Create boolean value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :27:Create boolean value is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :27:Create boolean value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :29:Create flt value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :29:Create flt value is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :29:Create flt value.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :31:insert empty row to empty table.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :31:insert empty row to empty table is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :31:insert empty row to empty table.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :33:get col1 from tbl2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :33:get col1 from tbl2 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :33:get col1 from tbl2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :35:get col1 from tbl2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :35:get col1 from tbl2 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :35:get col1 from tbl2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :37:get col2 from tbl3.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :37:get col2 from tbl3 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :37:get col2 from tbl3.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :39:get col7 from tbl9.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :39:get col7 from tbl9 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :39:get col7 from tbl9.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :41:initialize empty table in db1.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :41:initialize empty table in db1 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :41:initialize empty table in db1.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :44:columns of tbl2 are [col1].
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :44:columns of tbl2 are [col1] is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :44:columns of tbl2 are [col1].
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :46:title of tbl1 is "tbl1".
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :46:title of tbl1 is "tbl1" is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :46:title of tbl1 is "tbl1".
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :48:retitle tbl1 with title "".
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :48:retitle tbl1 with title "" is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :48:retitle tbl1 with title "".
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :50:db3 without tbl2 is db2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :50:db3 without tbl2 is db2 is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :50:db3 without tbl2 is db2.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :52:tbl2 in db3 has 1 column.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :52:tbl2 in db3 has 1 column is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :52:tbl2 in db3 has 1 column.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Start test :54:HELP is HELP.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: Test :54:HELP is HELP is successful.
+2022-12-11T02:05:32+00:00 dhcp-vl2041-31392.eduroam.cornell.edu#02 I: End test :54:HELP is HELP.

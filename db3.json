@@ -5,12 +5,22 @@
       "columns": []
     },
     {
-      "title": "tbl2",
+      "title": "tbl10",
       "columns": [
         {
           "name": "col1",
           "values": [],
           "type": "String"
+        },
+        {
+          "name": "col2",
+          "values": [],
+          "type": "Int"
+        },
+        {
+          "name": "col9",
+          "values": [],
+          "type": "Float"
         }
       ]
     }

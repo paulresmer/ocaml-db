@@ -1,3 +1,4 @@
 (executable
  (name main)
- (libraries SQLDB ounit2 Stdlib))
+ (libraries SQLDB ounit2 Stdlib)
+ )
